@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+TechOrbit Learning - Certificate Verification
+</title>
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:Arial,sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #d9f5ff,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #fff1bd,
+            transparent 35%
+        ),
+        #eef3f8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+}
+
+
+.card{
+
+    width:100%;
+
+    max-width:650px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.15);
+
+    border-top:8px solid #123b72;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:rgba(25,169,216,.08);
+
+    top:-80px;
+    right:-60px;
+}
+
+
+.logo{
+
+    width:75px;
+    height:75px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b72,
+            #19a9d8
+        );
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:bold;
+}
+
+
+.brand{
+
+    margin-top:12px;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:#123b72;
+}
+
+
+.tagline{
+
+    margin-top:5px;
+
+    color:#19a9d8;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+}
+
+
+.verified{
+
+    margin:30px auto 20px;
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:#e4f8ef;
+
+    color:#087343;
+
+    font-weight:bold;
+
+}
+
+
+h1{
+
+    color:#123b72;
+
+    margin-bottom:25px;
+}
+
+
+.details{
+
+    text-align:left;
+
+    background:#f7fafc;
+
+    border-radius:12px;
+
+    padding:20px;
+}
+
+
+.row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:13px 5px;
+
+    border-bottom:1px solid #dde5ec;
+}
+
+
+.row:last-child{
+
+    border-bottom:none;
+}
+
+
+.label{
+
+    color:#777;
+
+    font-weight:bold;
+}
+
+
+.value{
+
+    color:#123b72;
+
+    font-weight:bold;
+
+    text-align:right;
+}
+
+
+.note{
+
+    margin-top:25px;
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+
+.error{
+
+    color:#b42318;
+
+    background:#fff0ee;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    display:none;
+}
+
+
+@media(max-width:600px){
+
+    .card{
+
+        padding:25px 18px;
+    }
+
+    .row{
+
+        flex-direction:column;
+
+        gap:5px;
+    }
+
+    .value{
+
+        text-align:left;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<div class="logo">
+TO
+</div>
+
+
+<div class="brand">
+TechOrbit Learning
+</div>
+
+
+<div class="tagline">
+LEARN • BUILD • GROW
+</div>
+
+
+<div
+    class="verified"
+    id="verified">
+
+✓ Certificate Verified
+
+</div>
+
+
+<h1>
+Certificate Verification
+</h1>
+
+
+<div
+    class="error"
+    id="error">
+
+Certificate information could not be loaded.
+
+</div>
+
+
+<div
+    class="details"
+    id="details">
+
+
+<div class="row">
+
+<span class="label">
+Student Name
+</span>
+
+<span
+    class="value"
+    id="name">
+
+-
+
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Program
+</span>
+
+<span
+    class="value"
+    id="program">
+
+-
+
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Duration
+</span>
+
+<span
+    class="value"
+    id="duration">
+
+-
+
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Issue Date
+</span>
+
+<span
+    class="value"
+    id="date">
+
+-
+
+</span>
+
+</div>
+
+
+<div class="row">
+
+<span class="label">
+Certificate ID
+</span>
+
+<span
+    class="value"
+    id="certificateId">
+
+-
+
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="note">
+
+This page displays certificate information
+associated with the Certificate ID encoded
+in the QR code.
+
+<br><br>
+
+TechOrbit Learning
+
+</div>
+
+
+</div>
+
+
+<script>
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+
+const id =
+params.get("id");
+
+const name =
+params.get("name");
+
+const program =
+params.get("program");
+
+const duration =
+params.get("duration");
+
+const date =
+params.get("date");
+
+
+if(
+id &&
+name &&
+program &&
+duration &&
+date
+){
+
+document.getElementById("name")
+.textContent = name;
+
+document.getElementById("program")
+.textContent = program;
+
+document.getElementById("duration")
+.textContent = duration;
+
+document.getElementById("date")
+.textContent = date;
+
+document.getElementById("certificateId")
+.textContent = id;
+
+}
+else{
+
+document.getElementById("details")
+.style.display = "none";
+
+document.getElementById("verified")
+.style.display = "none";
+
+document.getElementById("error")
+.style.display = "block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
