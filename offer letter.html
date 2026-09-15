@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>TechOrbit Learning - Internship Offer Letter</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#eef2f7;
+
+    color:#222;
+
+    padding:30px 15px;
+}
+
+
+/* =====================================================
+   GENERATOR FORM
+===================================================== */
+
+.form-container{
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:0 auto 30px;
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.10);
+}
+
+
+.form-container h1{
+
+    text-align:center;
+
+    color:#0b2f5b;
+
+    font-size:27px;
+
+    margin-bottom:7px;
+}
+
+
+.form-container p{
+
+    text-align:center;
+
+    color:#667085;
+
+    font-size:14px;
+
+    margin-bottom:25px;
+}
+
+
+.input-group{
+
+    margin-bottom:17px;
+}
+
+
+.input-group label{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:7px;
+
+    color:#253858;
+}
+
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #ccd5df;
+
+    border-radius:7px;
+
+    font-size:15px;
+
+    outline:none;
+
+    background:#fff;
+}
+
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:#0b5ea8;
+
+    box-shadow:
+        0 0 0 2px rgba(11,94,168,.08);
+}
+
+
+.generate-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:7px;
+
+    background:#0b2f5b;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    margin-top:5px;
+}
+
+
+.generate-btn:hover{
+
+    background:#0a427c;
+}
+
+
+/* =====================================================
+   OFFER LETTER
+===================================================== */
+
+.letter{
+
+    display:none;
+
+    width:100%;
+
+    max-width:900px;
+
+    min-height:1120px;
+
+    margin:auto;
+
+    background:#ffffff;
+
+    position:relative;
+
+    padding:55px 65px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.14);
+
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   PROFESSIONAL DOUBLE BORDER
+===================================================== */
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:20px;
+    left:20px;
+    right:20px;
+    bottom:20px;
+
+    border:2px solid #0b2f5b;
+
+    pointer-events:none;
+}
+
+
+.letter::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:27px;
+    left:27px;
+    right:27px;
+    bottom:27px;
+
+    border:1px solid #c8a33a;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+
+    position:relative;
+
+    z-index:5;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+
+    text-align:center;
+
+    padding-bottom:18px;
+
+    border-bottom:2px solid #0b2f5b;
+}
+
+
+.brand{
+
+    font-size:31px;
+
+    font-weight:800;
+
+    color:#0b2f5b;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+
+.tagline{
+
+    margin-top:7px;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:#c29b32;
+
+    font-weight:600;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.title{
+
+    text-align:center;
+
+    margin:35px 0 27px;
+}
+
+
+.title h2{
+
+    color:#0b2f5b;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:30px;
+
+    letter-spacing:1.5px;
+}
+
+
+.title .line{
+
+    width:110px;
+
+    height:3px;
+
+    background:#c8a33a;
+
+    margin:11px auto 0;
+}
+
+
+/* =====================================================
+   META
+===================================================== */
+
+.meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding-bottom:22px;
+
+    margin-bottom:25px;
+
+    border-bottom:1px solid #d9dfe7;
+
+    font-size:13px;
+
+    color:#333;
+}
+
+
+.meta strong{
+
+    color:#0b2f5b;
+
+    margin-right:4px;
+}
+
+
+/* =====================================================
+   GREETING
+===================================================== */
+
+.greeting{
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:16px;
+
+    margin-bottom:18px;
+}
+
+
+.student-name{
+
+    color:#0b2f5b;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   MAIN TEXT
+===================================================== */
+
+.main-text{
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:15px;
+
+    line-height:1.85;
+
+    color:#343a40;
+
+    text-align:justify;
+}
+
+
+.main-text p{
+
+    margin-bottom:16px;
+}
+
+
+.program-name{
+
+    color:#0b5e91;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   PROGRAM INFORMATION
+===================================================== */
+
+.program-info{
+
+    margin:27px 0;
+
+    padding:15px 0;
+
+    border-top:1px solid #d7dee7;
+
+    border-bottom:1px solid #d7dee7;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:0;
+}
+
+
+.info-item{
+
+    padding:10px 18px;
+
+    font-size:14px;
+
+    border-right:1px solid #d7dee7;
+}
+
+
+.info-item:nth-child(even){
+
+    border-right:none;
+}
+
+
+.info-item strong{
+
+    display:block;
+
+    color:#0b2f5b;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.7px;
+
+    margin-bottom:4px;
+}
+
+
+.info-item span{
+
+    color:#333;
+
+    font-weight:600;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title{
+
+    color:#0b2f5b;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    margin:25px 0 10px;
+
+    border-left:4px solid #c8a33a;
+
+    padding-left:10px;
+}
+
+
+/* =====================================================
+   RESPONSIBILITIES
+===================================================== */
+
+ul{
+
+    padding-left:23px;
+
+    color:#3e4650;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+li{
+
+    margin-bottom:4px;
+}
+
+
+/* =====================================================
+   CERTIFICATION
+===================================================== */
+
+.certification-text{
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:14px;
+
+    line-height:1.75;
+
+    color:#3e4650;
+
+    text-align:justify;
+}
+
+
+/* =====================================================
+   IMPORTANT NOTICE
+===================================================== */
+
+.notice{
+
+    margin-top:22px;
+
+    padding:12px 16px;
+
+    border-top:1px solid #c8a33a;
+
+    border-bottom:1px solid #c8a33a;
+
+    font-size:12px;
+
+    line-height:1.65;
+
+    color:#555;
+
+    background:#fffdf7;
+}
+
+
+.notice strong{
+
+    color:#0b2f5b;
+}
+
+
+/* =====================================================
+   SIGNATURE AREA
+===================================================== */
+
+.signature-area{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+}
+
+
+.signature{
+
+    width:230px;
+
+    text-align:left;
+}
+
+
+.signature-script{
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:27px;
+
+    font-style:italic;
+
+    color:#172033;
+
+    margin-bottom:4px;
+
+    min-height:34px;
+}
+
+
+.signature-line{
+
+    width:190px;
+
+    border-top:1px solid #333;
+
+    margin-bottom:7px;
+}
+
+
+.signature-name{
+
+    font-size:14px;
+
+    font-weight:800;
+
+    color:#0b2f5b;
+}
+
+
+.signature-role{
+
+    font-size:12px;
+
+    color:#555;
+
+    margin-top:3px;
+}
+
+
+/* =====================================================
+   DATE SIDE
+===================================================== */
+
+.signature-date{
+
+    text-align:right;
+
+    font-size:12px;
+
+    color:#555;
+
+    line-height:1.7;
+}
+
+
+.signature-date strong{
+
+    color:#0b2f5b;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.bottom{
+
+    text-align:center;
+
+    margin-top:30px;
+
+    padding-top:13px;
+
+    border-top:1px solid #d8dee6;
+
+    color:#737b86;
+
+    font-size:10.5px;
+
+    letter-spacing:.2px;
+}
+
+
+/* =====================================================
+   PRINT BUTTON
+===================================================== */
+
+.print-btn{
+
+    display:block;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:7px;
+
+    background:#0b2f5b;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+.print-btn:hover{
+
+    background:#0a427c;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    body{
+
+        padding:10px;
+    }
+
+
+    .form-container{
+
+        padding:22px 18px;
+    }
+
+
+    .letter{
+
+        padding:48px 32px;
+
+        min-height:1100px;
+    }
+
+
+    .brand{
+
+        font-size:23px;
+
+        letter-spacing:1px;
+    }
+
+
+    .tagline{
+
+        font-size:9px;
+
+        letter-spacing:2.5px;
+    }
+
+
+    .title{
+
+        margin-top:30px;
+    }
+
+
+    .title h2{
+
+        font-size:24px;
+    }
+
+
+    .meta{
+
+        flex-direction:column;
+
+        gap:8px;
+    }
+
+
+    .program-info{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .info-item{
+
+        border-right:none;
+
+        border-bottom:1px solid #d7dee7;
+    }
+
+
+    .info-item:last-child{
+
+        border-bottom:none;
+    }
+
+
+    .signature-area{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:25px;
+    }
+
+
+    .signature-date{
+
+        text-align:left;
+    }
+
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print{
+
+    body{
+
+        background:#fff;
+
+        padding:0;
+    }
+
+
+    .form-container,
+    .print-btn{
+
+        display:none !important;
+    }
+
+
+    .letter{
+
+        display:block !important;
+
+        width:100%;
+
+        max-width:none;
+
+        min-height:1120px;
+
+        margin:0;
+
+        box-shadow:none;
+    }
+
+
+    @page{
+
+        size:A4;
+
+        margin:0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     GENERATOR FORM
+===================================================== -->
+
+<div class="form-container">
+
+    <h1>
+        TechOrbit Learning
+    </h1>
+
+    <p>
+        Generate Internship Offer Letter
+    </p>
+
+
+    <!-- STUDENT NAME -->
+
+    <div class="input-group">
+
+        <label>
+            Student Full Name
+        </label>
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter student name"
+        >
+
+    </div>
+
+
+    <!-- PROGRAM -->
+
+    <div class="input-group">
+
+        <label>
+            Internship Program
+        </label>
+
+        <select id="program">
+
+            <option value="">
+                Select Program
+            </option>
+
+            <option>
+                Web Development
+            </option>
+
+            <option>
+                Python Programming
+            </option>
+
+            <option>
+                Java Programming
+            </option>
+
+            <option>
+                Data Analytics
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- DURATION -->
+
+    <div class="input-group">
+
+        <label>
+            Duration
+        </label>
+
+        <select id="duration">
+
+            <option value="">
+                Select Duration
+            </option>
+
+            <option>
+                4 Weeks
+            </option>
+
+            <option>
+                12 Weeks
+            </option>
+
+            <option>
+                16 Weeks
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- ENROLLMENT ID -->
+
+    <div class="input-group">
+
+        <label>
+            Enrollment ID
+        </label>
+
+        <input
+            type="text"
+            id="enrollmentId"
+            placeholder="Example: TOL2026001"
+        >
+
+    </div>
+
+
+    <!-- ISSUE DATE -->
+
+    <div class="input-group">
+
+        <label>
+            Issue Date
+        </label>
+
+        <input
+            type="date"
+            id="issueDate"
+        >
+
+    </div>
+
+
+    <!-- GENERATE -->
+
+    <button
+        class="generate-btn"
+        onclick="generateLetter()"
+    >
+
+        Generate Offer Letter
+
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     OFFER LETTER
+===================================================== -->
+
+<div
+    class="letter"
+    id="offerLetter"
+>
+
+<div class="content">
+
+
+    <!-- =================================================
+         HEADER
+    ================================================== -->
+
+    <div class="header">
+
+        <div class="brand">
+
+            TECHORBIT LEARNING
+
+        </div>
+
+        <div class="tagline">
+
+            LEARN • BUILD • GROW
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         TITLE
+    ================================================== -->
+
+    <div class="title">
+
+        <h2>
+
+            INTERNSHIP OFFER LETTER
+
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         META
+    ================================================== -->
+
+    <div class="meta">
+
+        <div>
+
+            <strong>
+                Enrollment ID:
+            </strong>
+
+            <span id="showId">
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Issue Date:
+            </strong>
+
+            <span id="showDate">
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         GREETING
+    ================================================== -->
+
+    <div class="greeting">
+
+        Dear
+
+        <span
+            class="student-name"
+            id="showName"
+        ></span>,
+
+    </div>
+
+
+
+    <!-- =================================================
+         INTRODUCTION
+    ================================================== -->
+
+    <div class="main-text">
+
+        <p>
+
+            We are pleased to confirm your enrollment with
+            <strong>TechOrbit Learning</strong> and welcome you
+            to our Online / Remote Internship and Skill Development
+            Program.
+
+        </p>
+
+
+        <p>
+
+            Based on your registration, you are invited to participate
+            in the
+
+            <span
+                class="program-name"
+                id="showProgram"
+            ></span>
+
+            program for a period of
+
+            <strong
+                id="showDuration"
+            ></strong>.
+
+            The program is designed to provide practical learning
+            through structured tasks, hands-on activities,
+            projects and skill development.
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PROGRAM INFORMATION
+    ================================================== -->
+    <div class="program-info">
+
+
+        <div class="info-item">
+
+            <strong>
+                Student Name
+            </strong>
+
+            <span id="detailName"></span>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <strong>
+                Internship Program
+            </strong>
+
+            <span id="detailProgram"></span>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <strong>
+                Duration
+            </strong>
+
+            <span id="detailDuration"></span>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <strong>
+                Mode
+            </strong>
+
+            <span>
+                Online / Remote
+            </span>
+
+        </div>
+
+    </div>
+
+    
+
+    <!-- =================================================
+         RESPONSIBILITIES
+    ================================================== -->
+
+    <div class="section-title">
+
+        Program Responsibilities
+
+    </div>
+
+
+    <ul>
+
+        <li>
+            Complete the assigned learning tasks and practical activities.
+        </li>
+
+        <li>
+            Work on projects related to the selected internship program.
+        </li>
+
+        <li>
+            Submit required work within the specified program timeline.
+        </li>
+
+        <li>
+            Follow the learning instructions and program guidelines.
+        </li>
+
+        <li>
+            Demonstrate practical understanding through completed work.
+        </li>
+
+    </ul>
+
+
+
+    <!-- =================================================
+         COMPLETION
+    ================================================== -->
+
+    <div class="section-title">
+
+        Completion & Certification
+
+    </div>
+
+
+    <div class="certification-text">
+
+        Participants who successfully complete the applicable
+        program requirements, assigned tasks and submission /
+        evaluation process may receive a
+
+        <strong>
+            Program Completion Certificate
+        </strong>
+
+        from TechOrbit Learning.
+
+    </div>
+
+
+
+    <!-- =================================================
+         IMPORTANT NOTICE
+    ================================================== -->
+
+    <div class="notice">
+
+        <strong>
+            Important:
+        </strong>
+
+        This is an online learning and internship program offered
+        by TechOrbit Learning. Certification is based on
+        successful completion of the applicable program requirements
+        and is not issued solely on the basis of payment.
+
+    </div>
+
+
+
+    <!-- =================================================
+         SIGNATURE
+    ================================================== -->
+
+    <div class="signature-area">
+
+
+        <div class="signature">
+
+            <div class="signature-script">
+
+                Sk. Hussain Bee
+
+            </div>
+
+
+            <div class="signature-line"></div>
+
+
+            <div class="signature-name">
+
+                Shaik. Hussain Bee
+
+            </div>
+
+
+            <div class="signature-role">
+
+                Human Resources &amp; Academic Head<br>
+                TechOrbit Learning
+
+            </div>
+
+        </div>
+
+
+
+        <div class="signature-date">
+
+            <strong>
+                Issue Date
+            </strong>
+
+            <br>
+
+            <span id="showDateBottom"></span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <div class="bottom">
+
+        TechOrbit Learning
+        &nbsp;•&nbsp;
+        Learn • Build • Grow
+        &nbsp;•&nbsp;
+        Online / Remote Learning Program
+
+        <br><br>
+
+        shaikhussainbee2805.github.io/TechOrbit-Learning/
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PRINT BUTTON
+===================================================== -->
+
+<button
+    class="print-btn"
+    id="printButton"
+    style="display:none;"
+    onclick="window.print()"
+>
+
+    🖨️ Print / Save as PDF
+
+</button>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+function generateLetter(){
+
+
+    /* ================================================
+       GET VALUES
+    ================================================ */
+
+
+    const name =
+
+        document
+        .getElementById("studentName")
+        .value
+        .trim();
+
+
+    const program =
+
+        document
+        .getElementById("program")
+        .value;
+
+
+    const duration =
+
+        document
+        .getElementById("duration")
+        .value;
+
+
+    const enrollmentId =
+
+        document
+        .getElementById("enrollmentId")
+        .value
+        .trim();
+
+
+    const date =
+
+        document
+        .getElementById("issueDate")
+        .value;
+
+
+
+    /* ================================================
+       VALIDATION
+    ================================================ */
+
+
+    if(
+
+        !name ||
+        !program ||
+        !duration ||
+        !enrollmentId ||
+        !date
+
+    ){
+
+        alert(
+            "Please fill all the details."
+        );
+
+        return;
+
+    }
+
+
+
+    /* ================================================
+       DATE FORMAT
+    ================================================ */
+
+
+    const formattedDate =
+
+        new Date(
+            date + "T00:00:00"
+        )
+        .toLocaleDateString(
+            "en-IN",
+            {
+                day:"2-digit",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+
+    /* ================================================
+       DISPLAY DATA
+    ================================================ */
+
+
+    document
+    .getElementById("showName")
+    .textContent = name;
+
+
+    document
+    .getElementById("showProgram")
+    .textContent = program;
+
+
+    document
+    .getElementById("showDuration")
+    .textContent = duration;
+
+
+    document
+    .getElementById("showId")
+    .textContent = enrollmentId;
+
+
+    document
+    .getElementById("showDate")
+    .textContent = formattedDate;
+
+
+    document
+    .getElementById("showDateBottom")
+    .textContent = formattedDate;
+
+
+
+    /* ================================================
+       PROGRAM INFORMATION
+    ================================================ */
+
+
+    document
+    .getElementById("detailName")
+    .textContent = name;
+
+
+    document
+    .getElementById("detailProgram")
+    .textContent = program;
+
+
+    document
+    .getElementById("detailDuration")
+    .textContent = duration;
+
+
+
+    /* ================================================
+       SHOW LETTER
+    ================================================ */
+
+
+    document
+    .getElementById("offerLetter")
+    .style.display = "block";
+
+
+    document
+    .getElementById("printButton")
+    .style.display = "block";
+
+
+
+    /* ================================================
+       SCROLL TO LETTER
+    ================================================ */
+
+
+    document
+    .getElementById("offerLetter")
+    .scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>
