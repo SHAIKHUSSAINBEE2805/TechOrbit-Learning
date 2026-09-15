@@ -1,12 +1,26 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TechOrbit Learning - Certificate</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>TechOrbit Learning - Certificate Generator</title>
+
+
+<!-- QR CODE LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -14,107 +28,184 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#e9edf2;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#e9edf3;
+
     padding:25px;
 }
 
 
-/* ================= FORM ================= */
+/* =========================
+   GENERATOR FORM
+========================= */
 
 .generator{
+
     width:100%;
+
     max-width:650px;
+
     margin:0 auto 30px;
-    background:#fff;
+
+    background:#ffffff;
+
     padding:25px;
-    border-radius:14px;
-    box-shadow:0 8px 30px rgba(0,0,0,.12);
+
+    border-radius:15px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.12);
 }
 
 .generator h2{
+
     text-align:center;
+
     color:#082d5c;
+
     margin-bottom:20px;
+
+    line-height:1.5;
 }
 
 .generator label{
+
     display:block;
+
     margin-top:12px;
+
     margin-bottom:5px;
+
     font-weight:bold;
+
+    color:#333;
 }
 
 .generator input,
 .generator select{
+
     width:100%;
+
     padding:12px;
-    border:1px solid #ccc;
+
+    border:1px solid #cfd5dc;
+
     border-radius:7px;
+
     font-size:15px;
+
+    outline:none;
+}
+
+.generator input:focus,
+.generator select:focus{
+
+    border-color:#19a9d8;
 }
 
 .btn{
+
     width:100%;
+
     margin-top:15px;
+
     padding:14px;
-    border:0;
+
+    border:none;
+
     border-radius:8px;
+
     background:#082d5c;
+
     color:white;
+
     font-size:16px;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
+.btn:hover{
 
-/* ================= CERTIFICATE ================= */
-
-.certificate{
-    width:1123px;
-    height:794px;
-    max-width:100%;
-    margin:auto;
-    position:relative;
-    overflow:hidden;
-    background:#fff;
-
-    border:10px solid #082d5c;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.2);
+    background:#0b477f;
 }
 
 
-/* ================= GOLD BORDER ================= */
+/* =========================
+   CERTIFICATE
+========================= */
+
+.certificate{
+
+    width:1123px;
+
+    height:794px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#ffffff;
+
+    border:10px solid #082d5c;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.20);
+}
+
+
+/* =========================
+   GOLD INNER BORDER
+========================= */
 
 .gold-border{
+
     position:absolute;
-    top:12px;
-    left:12px;
-    right:12px;
-    bottom:12px;
+
+    top:13px;
+    left:13px;
+    right:13px;
+    bottom:13px;
 
     border:2px solid #d2aa3b;
 
-    z-index:10;
+    z-index:20;
 
     pointer-events:none;
 }
 
 
-/* ================= CORNERS ================= */
+/* =========================
+   DECORATIVE CORNERS
+========================= */
 
 .corner{
+
     position:absolute;
-    width:150px;
-    height:150px;
+
+    width:155px;
+
+    height:155px;
+
     z-index:2;
 }
 
 .corner.tl{
+
     top:0;
     left:0;
-    background:#10b9e5;
+
+    background:#19b9e6;
 
     clip-path:polygon(
         0 0,
@@ -124,9 +215,11 @@ body{
 }
 
 .corner.tr{
+
     top:0;
     right:0;
-    background:#10b9e5;
+
+    background:#19b9e6;
 
     clip-path:polygon(
         0 0,
@@ -136,8 +229,10 @@ body{
 }
 
 .corner.bl{
+
     bottom:0;
     left:0;
+
     background:#082d5c;
 
     clip-path:polygon(
@@ -148,8 +243,10 @@ body{
 }
 
 .corner.br{
+
     bottom:0;
     right:0;
+
     background:#082d5c;
 
     clip-path:polygon(
@@ -160,20 +257,26 @@ body{
 }
 
 
-/* ================= WATERMARK ================= */
+/* =========================
+   WATERMARK
+========================= */
 
 .watermark{
+
     position:absolute;
 
     width:500px;
+
     height:500px;
 
     object-fit:contain;
 
     left:50%;
-    top:53%;
 
-    transform:translate(-50%,-50%);
+    top:52%;
+
+    transform:
+        translate(-50%,-50%);
 
     opacity:.035;
 
@@ -183,47 +286,59 @@ body{
 }
 
 
-/* ================= CONTENT ================= */
+/* =========================
+   MAIN CONTENT
+========================= */
 
 .content{
+
     position:relative;
+
     z-index:5;
 
     height:100%;
 
     text-align:center;
 
-    padding:28px 70px;
+    padding:27px 75px;
 }
 
 
-/* ================= LOGO ================= */
+/* =========================
+   LOGO
+========================= */
 
 .logo{
-    width:72px;
-    height:72px;
+
+    width:68px;
+
+    height:68px;
 
     object-fit:contain;
 
     display:block;
 
-    margin:0 auto 3px;
+    margin:0 auto 2px;
 }
 
 
-/* ================= COMPANY ================= */
+/* =========================
+   COMPANY NAME
+========================= */
 
 .company-name{
+
     color:#082d5c;
 
     font-size:25px;
 
     font-weight:900;
 
-    letter-spacing:2px;
+    letter-spacing:2.5px;
 }
 
 .tagline{
+
     color:#888;
 
     font-size:10px;
@@ -234,14 +349,17 @@ body{
 }
 
 
-/* ================= TITLE ================= */
+/* =========================
+   CERTIFICATE TITLE
+========================= */
 
 .title{
-    margin-top:13px;
+
+    margin-top:12px;
 
     color:#082d5c;
 
-    font-size:45px;
+    font-size:44px;
 
     font-weight:900;
 
@@ -249,11 +367,12 @@ body{
 }
 
 .subtitle{
-    margin-top:2px;
+
+    margin-top:1px;
 
     color:#c49b31;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:bold;
 
@@ -261,29 +380,35 @@ body{
 }
 
 .title-line{
-    width:310px;
+
+    width:330px;
+
     height:3px;
 
     background:#d3aa3b;
 
-    margin:9px auto 8px;
+    margin:9px auto 9px;
 }
 
 
-/* ================= TEXT ================= */
+/* =========================
+   BODY
+========================= */
 
 .to-whom{
+
     font-family:Georgia,serif;
 
     font-size:15px;
 
     font-weight:bold;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
 }
 
 .text{
-    max-width:870px;
+
+    max-width:880px;
 
     margin:auto;
 
@@ -291,17 +416,18 @@ body{
 
     font-size:14px;
 
-    line-height:1.48;
+    line-height:1.45;
 
     color:#333;
 }
 
 .student-name{
-    margin:5px 0;
+
+    margin:4px 0;
 
     font-family:Georgia,serif;
 
-    font-size:30px;
+    font-size:29px;
 
     font-weight:bold;
 
@@ -309,16 +435,15 @@ body{
 }
 
 .program{
+
     color:#082d5c;
 
     font-weight:bold;
 }
 
-
-/* ================= DATE ================= */
-
 .date-text{
-    margin-top:6px;
+
+    margin-top:7px;
 
     font-size:13px;
 
@@ -328,29 +453,37 @@ body{
 }
 
 
-/* ================= DECORATIVE LINE ================= */
+/* =========================
+   DECORATIVE LINE
+========================= */
 
 .decorative{
+
     width:70%;
+
     height:1px;
 
     background:#d7bd78;
 
-    margin:10px auto 0;
+    margin:11px auto 0;
 
-    opacity:.6;
+    opacity:.7;
 }
 
 
-/* ================= BOTTOM ================= */
+/* =========================
+   BOTTOM AREA
+========================= */
 
 .bottom{
+
     position:absolute;
 
-    left:70px;
-    right:70px;
+    left:75px;
 
-    bottom:35px;
+    right:75px;
+
+    bottom:39px;
 
     display:flex;
 
@@ -360,15 +493,19 @@ body{
 }
 
 
-/* ================= INFO ================= */
+/* =========================
+   DATE / PROGRAM
+========================= */
 
 .info{
+
     width:220px;
 
     text-align:center;
 }
 
 .info-title{
+
     color:#082d5c;
 
     font-size:11px;
@@ -381,31 +518,40 @@ body{
 }
 
 .info-line{
+
     border-top:1px solid #555;
 
     margin-bottom:5px;
 }
 
 .info-value{
+
     font-size:12px;
 
     color:#333;
 }
 
 
-/* ================= QR ================= */
+/* =========================
+   QR
+========================= */
 
 .qr-area{
+
     width:125px;
 
     text-align:center;
 }
 
 #qrcode{
-    width:92px;
-    height:92px;
+
+    width:100px;
+
+    height:100px;
 
     margin:auto;
+
+    background:#ffffff;
 
     display:flex;
 
@@ -415,13 +561,16 @@ body{
 }
 
 #qrcode img{
-    width:92px;
-    height:92px;
+
+    width:100px !important;
+
+    height:100px !important;
 
     display:block;
 }
 
 .qr-label{
+
     font-size:8px;
 
     color:#555;
@@ -432,12 +581,16 @@ body{
 }
 
 
-/* ================= ID ================= */
+/* =========================
+   CERTIFICATE ID
+========================= */
 
 .certificate-id{
+
     position:absolute;
 
     left:0;
+
     right:0;
 
     bottom:13px;
@@ -450,21 +603,28 @@ body{
 }
 
 
-/* ================= PRINT ================= */
+/* =========================
+   PRINT
+========================= */
 
 @media print{
 
     body{
+
         padding:0;
-        background:#fff;
+
+        background:#ffffff;
     }
 
     .generator{
+
         display:none;
     }
 
     .certificate{
+
         width:1123px;
+
         height:794px;
 
         max-width:none;
@@ -473,31 +633,60 @@ body{
     }
 
     @page{
+
         size:A4 landscape;
+
         margin:0;
     }
 }
 
+
+/* =========================
+   MOBILE PREVIEW
+========================= */
+
+@media(max-width:900px){
+
+    body{
+
+        padding:10px;
+
+        overflow-x:auto;
+    }
+
+    .certificate{
+
+        min-width:1123px;
+    }
+
+}
+
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ==================================================
+<!-- =====================================================
      GENERATOR
-================================================== -->
+===================================================== -->
 
 <div class="generator">
 
     <h2>
-        TechOrbit Learning<br>
+        TechOrbit Learning
+        <br>
         Certificate Generator
     </h2>
 
 
-    <label>Student Name</label>
+    <!-- STUDENT NAME -->
+
+    <label>
+        Student Name
+    </label>
 
     <input
         type="text"
@@ -506,35 +695,61 @@ body{
     >
 
 
-    <label>Internship Program</label>
+    <!-- PROGRAM -->
+
+    <label>
+        Internship Program
+    </label>
 
     <select id="program">
 
-        <option>Web Development</option>
+        <option>
+            Web Development
+        </option>
 
-        <option>Python Programming</option>
+        <option>
+            Python Programming
+        </option>
 
-        <option>Java Programming</option>
+        <option>
+            Java Programming
+        </option>
 
-        <option>Data Analytics</option>
+        <option>
+            Data Analytics
+        </option>
 
     </select>
 
 
-    <label>Duration</label>
+    <!-- DURATION -->
+
+    <label>
+        Duration
+    </label>
 
     <select id="duration">
 
-        <option>4 Weeks</option>
+        <option>
+            4 Weeks
+        </option>
 
-        <option>12 Weeks</option>
+        <option>
+            12 Weeks
+        </option>
 
-        <option>16 Weeks</option>
+        <option>
+            16 Weeks
+        </option>
 
     </select>
 
 
-    <label>Internship ID</label>
+    <!-- INTERNSHIP ID -->
+
+    <label>
+        Internship ID
+    </label>
 
     <input
         type="text"
@@ -543,7 +758,11 @@ body{
     >
 
 
-    <label>Start Date</label>
+    <!-- START DATE -->
+
+    <label>
+        Start Date
+    </label>
 
     <input
         type="date"
@@ -551,7 +770,11 @@ body{
     >
 
 
-    <label>End Date</label>
+    <!-- END DATE -->
+
+    <label>
+        End Date
+    </label>
 
     <input
         type="date"
@@ -559,7 +782,11 @@ body{
     >
 
 
-    <label>Issue Date</label>
+    <!-- ISSUE DATE -->
+
+    <label>
+        Issue Date
+    </label>
 
     <input
         type="date"
@@ -567,33 +794,41 @@ body{
     >
 
 
+    <!-- GENERATE -->
+
     <button
         class="btn"
         onclick="generateCertificate()"
     >
+
         Generate Certificate
+
     </button>
 
+
+    <!-- PRINT -->
 
     <button
         class="btn"
         onclick="window.print()"
     >
+
         Print / Save as PDF
+
     </button>
 
 </div>
 
 
 
-<!-- ==================================================
+<!-- =====================================================
      CERTIFICATE
-================================================== -->
+===================================================== -->
 
 <div class="certificate">
 
 
-    <!-- BORDER -->
+    <!-- GOLD BORDER -->
 
     <div class="gold-border"></div>
 
@@ -609,7 +844,7 @@ body{
     <div class="corner br"></div>
 
 
-    <!-- LARGE WATERMARK -->
+    <!-- WATERMARK -->
 
     <img
         src="LOGO.png"
@@ -623,7 +858,7 @@ body{
     <div class="content">
 
 
-        <!-- TO ICON -->
+        <!-- LOGO -->
 
         <img
             src="LOGO.png"
@@ -635,47 +870,63 @@ body{
         <!-- COMPANY -->
 
         <div class="company-name">
+
             TECHORBIT LEARNING
+
         </div>
 
 
         <div class="tagline">
+
             LEARN • BUILD • GROW
+
         </div>
 
 
         <!-- TITLE -->
 
         <div class="title">
+
             CERTIFICATE
+
         </div>
 
 
         <div class="subtitle">
+
             OF INTERNSHIP EXPERIENCE
+
         </div>
 
 
         <div class="title-line"></div>
 
 
+        <!-- TO WHOM -->
+
         <div class="to-whom">
+
             To Whomsoever It May Concern
+
         </div>
 
 
-        <!-- BODY -->
+        <!-- MAIN TEXT -->
 
         <div class="text">
 
             This is to certify that
 
+
             <div
                 class="student-name"
                 id="displayName"
             >
+
                 STUDENT NAME
+
             </div>
+
 
             has successfully completed a
 
@@ -685,20 +936,26 @@ body{
 
             Online / Remote Internship Program in
 
+
             <span
                 class="program"
                 id="displayProgram"
             >
+
                 Web Development
+
             </span>
+
 
             at <b>TechOrbit Learning</b>.
 
+
             During the internship, the participant demonstrated
             dedication, active participation and commitment
-            towards learning. The assigned practical activities,
-            tasks and project-based work were completed as part
-            of the applicable internship requirements.
+            towards learning. The participant completed the
+            applicable learning activities, practical tasks and
+            project-based work associated with the program.
+
 
             <div class="date-text">
 
@@ -722,7 +979,9 @@ body{
         <div class="decorative"></div>
 
 
-        <!-- BOTTOM -->
+        <!-- =================================================
+             BOTTOM
+        ================================================= -->
 
         <div class="bottom">
 
@@ -732,7 +991,9 @@ body{
             <div class="info">
 
                 <div class="info-title">
+
                     ISSUE DATE
+
                 </div>
 
                 <div class="info-line"></div>
@@ -741,7 +1002,9 @@ body{
                     class="info-value"
                     id="displayIssue"
                 >
+
                     DD / MM / YYYY
+
                 </div>
 
             </div>
@@ -752,7 +1015,9 @@ body{
             <div class="info">
 
                 <div class="info-title">
+
                     PROGRAM
+
                 </div>
 
                 <div class="info-line"></div>
@@ -761,7 +1026,9 @@ body{
                     class="info-value"
                     id="displayProgramBottom"
                 >
+
                     Web Development
+
                 </div>
 
             </div>
@@ -774,8 +1041,10 @@ body{
                 <div id="qrcode"></div>
 
                 <div class="qr-label">
+
                     SCAN TO VIEW<br>
                     CERTIFICATE DETAILS
+
                 </div>
 
             </div>
@@ -784,13 +1053,16 @@ body{
         </div>
 
 
-        <!-- ID -->
+        <!-- CERTIFICATE ID -->
 
         <div class="certificate-id">
 
             Internship ID:
+
             <b id="displayId">
+
                 TO-2026-001
+
             </b>
 
         </div>
@@ -804,9 +1076,9 @@ body{
 
 <script>
 
-/* ==================================================
+/* =====================================================
    DATE FORMAT
-================================================== */
+===================================================== */
 
 function formatDate(value){
 
@@ -828,103 +1100,124 @@ function formatDate(value){
         d.getFullYear();
 
     return day + " / " + month + " / " + year;
+
 }
 
 
-/* ==================================================
+/* =====================================================
    GENERATE CERTIFICATE
-================================================== */
+===================================================== */
 
 function generateCertificate(){
 
     const name =
-        document.getElementById("studentName")
+        document
+        .getElementById("studentName")
         .value
         .trim()
-        || "STUDENT NAME";
+        ||
+        "STUDENT NAME";
 
 
     const program =
-        document.getElementById("program")
+        document
+        .getElementById("program")
         .value;
 
 
     const duration =
-        document.getElementById("duration")
+        document
+        .getElementById("duration")
         .value;
 
 
     const id =
-        document.getElementById("internId")
+        document
+        .getElementById("internId")
         .value
         .trim()
-        || "TO-2026-001";
+        ||
+        "TO-2026-001";
 
 
     const start =
-        document.getElementById("startDate")
+        document
+        .getElementById("startDate")
         .value;
 
 
     const end =
-        document.getElementById("endDate")
+        document
+        .getElementById("endDate")
         .value;
 
 
     const issue =
-        document.getElementById("issueDate")
+        document
+        .getElementById("issueDate")
         .value;
 
 
-    /* UPDATE */
+    /* =========================
+       UPDATE CERTIFICATE
+    ========================= */
 
-    document.getElementById(
-        "displayName"
-    ).innerText = name;
-
-
-    document.getElementById(
-        "displayProgram"
-    ).innerText = program;
+    document
+        .getElementById("displayName")
+        .innerText =
+        name;
 
 
-    document.getElementById(
-        "displayProgramBottom"
-    ).innerText = program;
+    document
+        .getElementById("displayProgram")
+        .innerText =
+        program;
 
 
-    document.getElementById(
-        "displayDuration"
-    ).innerText = duration;
+    document
+        .getElementById("displayProgramBottom")
+        .innerText =
+        program;
 
 
-    document.getElementById(
-        "displayId"
-    ).innerText = id;
+    document
+        .getElementById("displayDuration")
+        .innerText =
+        duration;
 
 
-    document.getElementById(
-        "displayStart"
-    ).innerText = formatDate(start);
+    document
+        .getElementById("displayId")
+        .innerText =
+        id;
 
 
-    document.getElementById(
-        "displayEnd"
-    ).innerText = formatDate(end);
+    document
+        .getElementById("displayStart")
+        .innerText =
+        formatDate(start);
 
 
-    document.getElementById(
-        "displayIssue"
-    ).innerText = formatDate(issue);
+    document
+        .getElementById("displayEnd")
+        .innerText =
+        formatDate(end);
+
+
+    document
+        .getElementById("displayIssue")
+        .innerText =
+        formatDate(issue);
 
 
     /* =================================================
-       QR CODE
-       QR → verify.html
+       VERIFY PAGE URL
     ================================================= */
 
     const verifyURL =
+
         "https://shaikhussainbee2805.github.io/" +
+
         "TechOrbit-Learning/verify.html" +
 
         "?id=" +
@@ -945,32 +1238,42 @@ function generateCertificate(){
         "&end=" +
         encodeURIComponent(formatDate(end)) +
 
-        "&issue=" +
+        "&date=" +
         encodeURIComponent(formatDate(issue));
 
 
-    /*
-       QR IMAGE
-    */
+    /* =================================================
+       CREATE QR CODE
+    ================================================= */
 
-    const qrURL =
-        "https://api.qrserver.com/v1/create-qr-code/" +
-
-        "?size=180x180" +
-
-        "&margin=5" +
-
-        "&data=" +
-
-        encodeURIComponent(verifyURL);
+    const qrContainer =
+        document.getElementById("qrcode");
 
 
-    document.getElementById(
-        "qrcode"
-    ).innerHTML =
-        '<img src="' +
-        qrURL +
-        '" alt="QR Code">';
+    /* Remove previous QR */
+
+    qrContainer.innerHTML = "";
+
+
+    /* Generate new QR */
+
+    new QRCode(
+        qrContainer,
+        {
+            text: verifyURL,
+
+            width:100,
+
+            height:100,
+
+            colorDark:"#000000",
+
+            colorLight:"#ffffff",
+
+            correctLevel:
+                QRCode.CorrectLevel.H
+        }
+    );
 
 }
 
@@ -978,4 +1281,5 @@ function generateCertificate(){
 
 
 </body>
+
 </html>
