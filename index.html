@@ -12,20 +12,29 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <span>TO</span> TechOrbit <b>Learning</b>
-            </div>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#internship">Internship</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <div class="logo">
+        <span class="logo-to">TO</span>
+        <span>TechOrbit Learning</span>
+    </div>
 
-            <a href="#register" class="nav-btn">Join Now</a>
-        </nav>
+    <!-- Desktop Menu -->
+    <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#internship">Internship</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Mobile 3 Lines -->
+    <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</nav>
     </header>
 
 
@@ -163,7 +172,7 @@
                 <li>✓ Internship completion certificate</li>
             </ul>
 
-            <a href="#register" class="primary-btn">Apply Now</a>
+            <a href="https://forms.gle/GnLyDLQaBdSKGMq99" class="primary-btn">Apply Now</a>
         </div>
 
         <div class="duration-card">
@@ -242,8 +251,35 @@
     <section class="contact" id="contact">
 
         <h2>Contact Us</h2>
-        <p>Email: support@techorbitlearning.com</p>
-        <p>WhatsApp: </p>
+        <div class="social-icons">
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/company/techorbit-learning/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="LinkedIn">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.95v5.66H9.35V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.29zM5.34 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.56 20.45h3.56V8.98H3.56v11.47z"/>
+        </svg>
+
+    </a>
+
+
+    <!-- WhatsApp -->
+    <a href="https://chat.whatsapp.com/HlBXbKyyMns2QkMdmyhY6F?s=cl&p=a&mlu=4&ilr=4"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="WhatsApp">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M17.47 14.38c-.29-.15-1.71-.84-1.98-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.94 1.13-.17.2-.35.22-.64.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.43-1.72-1.6-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.35.44-.52.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.03 1.01-1.03 2.46 0 1.45 1.06 2.84 1.21 3.03.15.2 2.08 3.18 5.04 4.46.7.3 1.25.48 1.68.61.71.23 1.35.2 1.86.12.57-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.27-.2-.56-.35z"/>
+            <path d="M12.02 2a9.95 9.95 0 0 0-8.53 15.06L2 22l5.1-1.46A9.95 9.95 0 1 0 12.02 2zm0 18.1c-1.57 0-3.1-.42-4.43-1.22l-.32-.19-3.03.87.88-2.95-.21-.33A8.13 8.13 0 1 1 12.02 20.1z"/>
+        </svg>
+
+    </a>
+
+</div>
 
     </section>
 
@@ -263,6 +299,14 @@
 
 
     <script src="script.js"></script>
+    <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
