@@ -15,16 +15,9 @@ TechOrbit Learning - Certificate Verification
 
 <style>
 
-/* =========================
-   BASIC
-========================= */
-
 *{
-
     box-sizing:border-box;
-
     margin:0;
-
     padding:0;
 }
 
@@ -32,25 +25,19 @@ body{
 
     min-height:100vh;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family:Arial,sans-serif;
 
     background:
-
         radial-gradient(
             circle at top left,
             #d9f5ff,
             transparent 35%
         ),
-
         radial-gradient(
             circle at bottom right,
             #fff1bd,
             transparent 35%
         ),
-
         #eef3f8;
 
     display:flex;
@@ -63,17 +50,13 @@ body{
 }
 
 
-/* =========================
-   CARD
-========================= */
-
 .card{
 
     width:100%;
 
-    max-width:700px;
+    max-width:650px;
 
-    background:#ffffff;
+    background:white;
 
     border-radius:20px;
 
@@ -92,10 +75,6 @@ body{
 }
 
 
-/* =========================
-   DECORATION
-========================= */
-
 .card::before{
 
     content:"";
@@ -103,58 +82,52 @@ body{
     position:absolute;
 
     width:180px;
-
     height:180px;
 
     border-radius:50%;
 
-    background:
-        rgba(25,169,216,.08);
+    background:rgba(25,169,216,.08);
 
     top:-80px;
-
     right:-60px;
 }
 
 
-/* =========================
-   LOGO
-========================= */
-
 .logo{
 
-    width:78px;
-
-    height:78px;
+    width:75px;
+    height:75px;
 
     margin:auto;
+
+    border-radius:50%;
 
     display:flex;
 
     align-items:center;
 
     justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b72,
+            #19a9d8
+        );
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:bold;
 }
 
-.logo img{
-
-    width:78px;
-
-    height:78px;
-
-    object-fit:contain;
-}
-
-
-/* =========================
-   BRAND
-========================= */
 
 .brand{
 
     margin-top:12px;
 
-    font-size:27px;
+    font-size:26px;
 
     font-weight:bold;
 
@@ -174,17 +147,13 @@ body{
 }
 
 
-/* =========================
-   VERIFIED
-========================= */
-
 .verified{
 
-    margin:28px auto 18px;
+    margin:30px auto 20px;
 
     display:inline-block;
 
-    padding:10px 22px;
+    padding:10px 20px;
 
     border-radius:30px;
 
@@ -194,27 +163,16 @@ body{
 
     font-weight:bold;
 
-    font-size:15px;
 }
 
-
-/* =========================
-   TITLE
-========================= */
 
 h1{
 
     color:#123b72;
 
     margin-bottom:25px;
-
-    font-size:28px;
 }
 
-
-/* =========================
-   DETAILS
-========================= */
 
 .details{
 
@@ -233,8 +191,6 @@ h1{
     display:flex;
 
     justify-content:space-between;
-
-    align-items:center;
 
     gap:20px;
 
@@ -268,10 +224,6 @@ h1{
 }
 
 
-/* =========================
-   NOTE
-========================= */
-
 .note{
 
     margin-top:25px;
@@ -284,10 +236,6 @@ h1{
 }
 
 
-/* =========================
-   ERROR
-========================= */
-
 .error{
 
     color:#b42318;
@@ -299,14 +247,8 @@ h1{
     border-radius:10px;
 
     display:none;
-
-    line-height:1.5;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:600px){
 
@@ -315,16 +257,9 @@ h1{
         padding:25px 18px;
     }
 
-    h1{
-
-        font-size:23px;
-    }
-
     .row{
 
         flex-direction:column;
-
-        align-items:flex-start;
 
         gap:5px;
     }
@@ -344,391 +279,214 @@ h1{
 <body>
 
 
-<!-- =====================================================
-     VERIFICATION CARD
-===================================================== -->
-
 <div class="card">
 
 
-    <!-- LOGO -->
+<div class="logo">
+TO
+</div>
 
-    <div class="logo">
 
-        <img
-            src="LOGO.png"
-            alt="TechOrbit Learning"
-        >
+<div class="brand">
+TechOrbit Learning
+</div>
 
-    </div>
 
+<div class="tagline">
+LEARN • BUILD • GROW
+</div>
 
-    <!-- BRAND -->
 
-    <div class="brand">
+<div
+    class="verified"
+    id="verified">
 
-        TechOrbit Learning
+✓ Certificate Verified
 
-    </div>
+</div>
 
 
-    <div class="tagline">
+<h1>
+Certificate Verification
+</h1>
 
-        LEARN • BUILD • GROW
 
-    </div>
+<div
+    class="error"
+    id="error">
 
+Certificate information could not be loaded.
 
-    <!-- VERIFIED -->
+</div>
 
-    <div
-        class="verified"
-        id="verified"
-    >
 
-        ✓ Certificate Verified
+<div
+    class="details"
+    id="details">
 
-    </div>
 
+<div class="row">
 
-    <!-- TITLE -->
+<span class="label">
+Student Name
+</span>
 
-    <h1>
+<span
+    class="value"
+    id="name">
 
-        Certificate Verification
+-
 
-    </h1>
+</span>
 
+</div>
 
-    <!-- ERROR -->
 
-    <div
-        class="error"
-        id="error"
-    >
+<div class="row">
 
-        Certificate information could not be loaded.
+<span class="label">
+Program
+</span>
 
-        <br><br>
+<span
+    class="value"
+    id="program">
 
-        Please scan the QR code from a valid
-        TechOrbit Learning certificate.
+-
 
-    </div>
+</span>
 
+</div>
 
-    <!-- DETAILS -->
 
-    <div
-        class="details"
-        id="details"
-    >
+<div class="row">
 
+<span class="label">
+Duration
+</span>
 
-        <!-- STUDENT -->
+<span
+    class="value"
+    id="duration">
 
-        <div class="row">
+-
 
-            <span class="label">
+</span>
 
-                Student Name
+</div>
 
-            </span>
 
-            <span
-                class="value"
-                id="name"
-            >
+<div class="row">
 
-                -
+<span class="label">
+Issue Date
+</span>
 
-            </span>
+<span
+    class="value"
+    id="date">
 
-        </div>
+-
 
+</span>
 
-        <!-- PROGRAM -->
+</div>
 
-        <div class="row">
 
-            <span class="label">
+<div class="row">
 
-                Program
+<span class="label">
+Certificate ID
+</span>
 
-            </span>
+<span
+    class="value"
+    id="certificateId">
 
-            <span
-                class="value"
-                id="program"
-            >
+-
 
-                -
+</span>
 
-            </span>
-
-        </div>
-
-
-        <!-- DURATION -->
-
-        <div class="row">
-
-            <span class="label">
-
-                Duration
-
-            </span>
-
-            <span
-                class="value"
-                id="duration"
-            >
-
-                -
-
-            </span>
-
-        </div>
-
-
-        <!-- INTERNSHIP PERIOD -->
-
-        <div class="row">
-
-            <span class="label">
-
-                Internship Period
-
-            </span>
-
-            <span
-                class="value"
-                id="period"
-            >
-
-                -
-
-            </span>
-
-        </div>
-
-
-        <!-- ISSUE DATE -->
-
-        <div class="row">
-
-            <span class="label">
-
-                Issue Date
-
-            </span>
-
-            <span
-                class="value"
-                id="date"
-            >
-
-                -
-
-            </span>
-
-        </div>
-
-
-        <!-- CERTIFICATE ID -->
-
-        <div class="row">
-
-            <span class="label">
-
-                Certificate ID
-
-            </span>
-
-            <span
-                class="value"
-                id="certificateId"
-            >
-
-                -
-
-            </span>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- NOTE -->
-
-    <div class="note">
-
-        This page displays certificate information
-        associated with the Certificate ID encoded
-        in the QR code.
-
-        <br><br>
-
-        <b>
-            TechOrbit Learning
-        </b>
-
-        <br>
-
-        Learn • Build • Grow
-
-    </div>
+</div>
 
 
 </div>
 
 
+<div class="note">
+
+This page displays certificate information
+associated with the Certificate ID encoded
+in the QR code.
+
+<br><br>
+
+TechOrbit Learning
+
+</div>
+
+
+</div>
+
 
 <script>
 
-/* =====================================================
-   READ QR URL PARAMETERS
-===================================================== */
-
 const params =
-    new URLSearchParams(
-        window.location.search
-    );
+new URLSearchParams(
+window.location.search
+);
 
-
-/* =========================
-   GET DATA
-========================= */
 
 const id =
-    params.get("id");
-
+params.get("id");
 
 const name =
-    params.get("name");
-
+params.get("name");
 
 const program =
-    params.get("program");
-
+params.get("program");
 
 const duration =
-    params.get("duration");
-
-
-const start =
-    params.get("start");
-
-
-const end =
-    params.get("end");
-
+params.get("duration");
 
 const date =
-    params.get("date");
+params.get("date");
 
-
-/* =====================================================
-   DISPLAY DATA
-===================================================== */
 
 if(
-
-    id &&
-    name &&
-    program &&
-    duration &&
-    date
-
+id &&
+name &&
+program &&
+duration &&
+date
 ){
 
-    /* Student */
+document.getElementById("name")
+.textContent = name;
 
-    document
-        .getElementById("name")
-        .textContent =
-        name;
+document.getElementById("program")
+.textContent = program;
 
+document.getElementById("duration")
+.textContent = duration;
 
-    /* Program */
+document.getElementById("date")
+.textContent = date;
 
-    document
-        .getElementById("program")
-        .textContent =
-        program;
-
-
-    /* Duration */
-
-    document
-        .getElementById("duration")
-        .textContent =
-        duration;
-
-
-    /* Period */
-
-    if(start && end){
-
-        document
-            .getElementById("period")
-            .textContent =
-            start +
-            " to " +
-            end;
-
-    }
-    else{
-
-        document
-            .getElementById("period")
-            .textContent =
-            "-";
-
-    }
-
-
-    /* Issue Date */
-
-    document
-        .getElementById("date")
-        .textContent =
-        date;
-
-
-    /* Certificate ID */
-
-    document
-        .getElementById("certificateId")
-        .textContent =
-        id;
+document.getElementById("certificateId")
+.textContent = id;
 
 }
 else{
 
-    /* Hide details */
+document.getElementById("details")
+.style.display = "none";
 
-    document
-        .getElementById("details")
-        .style.display =
-        "none";
+document.getElementById("verified")
+.style.display = "none";
 
-
-    /* Hide verified */
-
-    document
-        .getElementById("verified")
-        .style.display =
-        "none";
-
-
-    /* Show error */
-
-    document
-        .getElementById("error")
-        .style.display =
-        "block";
+document.getElementById("error")
+.style.display = "block";
 
 }
 
