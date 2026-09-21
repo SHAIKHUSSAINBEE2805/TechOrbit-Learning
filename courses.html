@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Courses | TechOrbit Learning</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <span class="logo-to">TO</span>
+        <span>TechOrbit Learning</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="index.html#internship">Internship</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    <button class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</nav>
+
+
+<!-- ================= COURSES HEADER ================= -->
+
+<section class="courses-page">
+
+    <div class="courses-heading">
+
+        <div class="small-heading">
+            ✦ TECHORBIT LEARNING
+        </div>
+
+        <h1>
+            Available <span>Courses</span>
+        </h1>
+
+        <p>
+            Explore technical courses designed to help you learn practical
+            skills and build real-world projects.
+        </p>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="course-search">
+
+        <span>🔍</span>
+
+        <input
+            type="text"
+            id="courseSearch"
+            placeholder="Search courses..."
+            onkeyup="searchCourses()"
+        >
+
+    </div>
+
+
+    <!-- ================= FILTERS ================= -->
+
+    <div class="course-filters">
+
+        <button
+            class="filter-btn active"
+            onclick="filterCourses('all', this)">
+            All Courses
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="filterCourses('development', this)">
+            Development
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="filterCourses('data', this)">
+            AI & Data
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="filterCourses('design', this)">
+            Design
+        </button>
+
+    </div>
+
+
+    <!-- ================= COURSE COUNT ================= -->
+
+    <div class="course-count">
+        Showing <span id="courseCount">8</span> Courses
+    </div>
+
+
+    <!-- ================= COURSE CARDS ================= -->
+
+    <div class="course-grid" id="courseGrid">
+
+
+        <!-- WEB DEVELOPMENT -->
+
+        <div
+            class="course-card"
+            data-category="development"
+            data-name="web development">
+
+            <div class="course-image web-image">
+                <span class="domain-label">DEVELOPMENT</span>
+                <span class="course-number">DEV-01</span>
+
+                <div class="course-icon">
+                    🌐
+                </div>
+            </div>
+
+            <div class="course-content">
+
+                <h2>Web Development</h2>
+
+                <p>
+                    Learn HTML, CSS and JavaScript and build
+                    responsive modern websites.
+                </p>
+
+                <div class="course-info">
+                    <span>💻 Practical Tasks</span>
+                    <span>🌐 Online</span>
+                </div>
+
+                <a href="web-development.html" class="course-btn">
+                    View Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PYTHON -->
+
+        <div
+            class="course-card"
+            data-category="development"
+            data-name="python programming">
+
+            <div class="course-image python-image">
+
+                <span class="domain-label">
+                    DEVELOPMENT
+                </span>
+
+                <span class="course-number">
+                    DEV-02
+                </span>
+
+                <div class="course-icon">
+                    🐍
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>Python Programming</h2>
+
+                <p>
+                    Learn Python fundamentals and build useful
+                    applications through practical tasks.
+                </p>
+
+                <div class="course-info">
+                    <span>🐍 Python</span>
+                    <span>💻 Projects</span>
+                </div>
+
+                <a href="python.html" class="course-btn">
+                    View Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- JAVA -->
+
+        <div
+            class="course-card"
+            data-category="development"
+            data-name="java programming">
+
+            <div class="course-image java-image">
+
+                <span class="domain-label">
+                    DEVELOPMENT
+                </span>
+
+                <span class="course-number">
+                    DEV-03
+                </span>
+
+                <div class="course-icon">
+                    ☕
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>Java Programming</h2>
+
+                <p>
+                    Understand Java concepts and learn
+                    application development step by step.
+                </p>
+
+                <div class="course-info">
+                    <span>☕ Java</span>
+                    <span>💻 Projects</span>
+                </div>
+
+                <a href="java.html" class="course-btn">
+                    View Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DATA ANALYTICS -->
+
+        <div
+            class="course-card"
+            data-category="data"
+            data-name="data analytics">
+
+            <div class="course-image data-image">
+
+                <span class="domain-label">
+                    AI & DATA
+                </span>
+
+                <span class="course-number">
+                    DATA-01
+                </span>
+
+                <div class="course-icon">
+                    📊
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>Data Analytics</h2>
+
+                <p>
+                    Learn data analysis and turn data into
+                    useful insights.
+                </p>
+
+                <div class="course-info">
+                    <span>📊 Analytics</span>
+                    <span>📈 Projects</span>
+                </div>
+
+                <a href="data-analytics.html" class="course-btn">
+                    View Course →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI -->
+
+        <div
+            class="course-card"
+            data-category="data"
+            data-name="artificial intelligence ai">
+
+            <div class="course-image ai-image">
+
+                <span class="domain-label">
+                    AI & DATA
+                </span>
+
+                <span class="course-number">
+                    AI-01
+                </span>
+
+                <div class="course-icon">
+                    🤖
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>Artificial Intelligence</h2>
+
+                <p>
+                    Explore AI concepts, intelligent systems
+                    and practical applications.
+                </p>
+
+                <div class="course-info">
+                    <span>🤖 AI</span>
+                    <span>🧠 Projects</span>
+                </div>
+
+                <a href="#" class="course-btn">
+                    Coming Soon →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CYBER SECURITY -->
+
+        <div
+            class="course-card"
+            data-category="development"
+            data-name="cyber security cybersecurity">
+
+            <div class="course-image cyber-image">
+
+                <span class="domain-label">
+                    DEVELOPMENT
+                </span>
+
+                <span class="course-number">
+                    SEC-01
+                </span>
+
+                <div class="course-icon">
+                    🛡️
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>Cyber Security</h2>
+
+                <p>
+                    Learn cybersecurity fundamentals and
+                    security concepts.
+                </p>
+
+                <div class="course-info">
+                    <span>🛡️ Security</span>
+                    <span>💻 Practical</span>
+                </div>
+
+                <a href="#" class="course-btn">
+                    Coming Soon →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- UI UX -->
+
+        <div
+            class="course-card"
+            data-category="design"
+            data-name="ui ux design">
+
+            <div class="course-image design-image">
+
+                <span class="domain-label">
+                    DESIGN
+                </span>
+
+                <span class="course-number">
+                    DES-01
+                </span>
+
+                <div class="course-icon">
+                    🎨
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>UI / UX Design</h2>
+
+                <p>
+                    Learn user interface and user experience
+                    design fundamentals.
+                </p>
+
+                <div class="course-info">
+                    <span>🎨 Design</span>
+                    <span>🖥️ UI/UX</span>
+                </div>
+
+                <a href="#" class="course-btn">
+                    Coming Soon →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FULL STACK -->
+
+        <div
+            class="course-card"
+            data-category="development"
+            data-name="full stack development">
+
+            <div class="course-image fullstack-image">
+
+                <span class="domain-label">
+                    DEVELOPMENT
+                </span>
+
+                <span class="course-number">
+                    DEV-04
+                </span>
+
+                <div class="course-icon">
+                    ⚙️
+                </div>
+
+            </div>
+
+            <div class="course-content">
+
+                <h2>Full Stack Development</h2>
+
+                <p>
+                    Learn frontend, backend and database
+                    concepts to build complete applications.
+                </p>
+
+                <div class="course-info">
+                    <span>⚙️ Full Stack</span>
+                    <span>💻 Projects</span>
+                </div>
+
+                <a href="#" class="course-btn">
+                    Coming Soon →
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function () {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+function filterCourses(category, button) {
+
+    const cards =
+        document.querySelectorAll(".course-card");
+
+    const buttons =
+        document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        if (
+            category === "all" ||
+            card.dataset.category === category
+        ) {
+
+            card.style.display = "block";
+            visible++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById("courseCount").textContent =
+        visible;
+
+}
+
+
+function searchCourses() {
+
+    const search =
+        document
+        .getElementById("courseSearch")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".course-card");
+
+    let visible = 0;
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        if (name.includes(search)) {
+
+            card.style.display = "block";
+            visible++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document.getElementById("courseCount").textContent =
+        visible;
+
+}
+
+</script>
+
+</body>
+</html>
