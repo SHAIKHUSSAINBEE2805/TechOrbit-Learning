@@ -314,68 +314,121 @@
 
     <script>
 
-const certificates = {
-
-    "TOL/PY/2026/0001": {
-        name: "Student Name",
-        program: "Python Programming Internship",
-        duration: "16 Weeks",
-        date: "21 December 2026"
-    },
-
-    "TOL/JAVA/2026/0002": {
-        name: "Student Two",
-        program: "Java Programming Internship",
-        duration: "12 Weeks",
-        date: "21 December 2026"
-    },
-
-    "TOL/PY/2026/0003": {
-        name: "Khasim",
-        program: "Python Programming Internship",
-        duration: "16 Weeks",
-        date: "21 December 2026"
-    }
-
-};
+const API_URL =
+"https://script.google.com/macros/s/AKfycbyqBvrKkmumvWgEiSliP-IGNb_n8Xgo5y2VZ9hNzgXLxGpHNlwuk13RuSPPox0IdfOv3w/exec";
 
 
 const params = new URLSearchParams(window.location.search);
-
-const id = params.get("id");
-
-const certificate = certificates[id];
+const certificateId = params.get("id");
 
 
-if (certificate) {
+function showCertificate(data) {
 
-    document.getElementById("name").textContent =
-        certificate.name;
+    if (data.success) {
 
-    document.getElementById("program").textContent =
-        certificate.program;
+        document.getElementById("name").textContent =
+            data.name;
 
-    document.getElementById("duration").textContent =
-        certificate.duration;
+        document.getElementById("program").textContent =
+            data.program;
 
-    document.getElementById("date").textContent =
-        certificate.date;
+        document.getElementById("duration").textContent =
+            data.duration;
 
-    document.getElementById("certificateId").textContent =
-        id;
+        document.getElementById("date").textContent =
+            data.date;
 
-} else {
+        document.getElementById("certificateId").textContent =
+            data.id;
 
-    document.getElementById("details").style.display =
-        "none";
+        document.getElementById("details").style.display =
+            "block";
 
-    document.getElementById("verified").style.display =
-        "none";
+        document.getElementById("verified").style.display =
+            "block";
 
-    document.getElementById("error").style.display =
-        "block";
+        document.getElementById("error").style.display =
+            "none";
+
+    } else {
+
+        document.getElementById("details").style.display =
+            "none";
+
+        document.getElementById("verified").style.display =
+            "none";
+
+        document.getElementById("error").style.display =
+            "block";
+    }
 
 }
+
+
+function verifyCertificate() {
+
+    if (!certificateId) {
+
+        document.getElementById("details").style.display =
+            "none";
+
+        document.getElementById("verified").style.display =
+            "none";
+
+        document.getElementById("error").style.display =
+            "block";
+
+        return;
+    }
+
+
+    const callbackName =
+        "certificateCallback_" + Date.now();
+
+
+    window[callbackName] = function(data) {
+
+        showCertificate(data);
+
+        delete window[callbackName];
+
+        script.remove();
+
+    };
+
+
+    const script = document.createElement("script");
+
+    script.src =
+        API_URL +
+        "?id=" +
+        encodeURIComponent(certificateId) +
+        "&callback=" +
+        callbackName;
+
+
+    script.onerror = function() {
+
+        document.getElementById("details").style.display =
+            "none";
+
+        document.getElementById("verified").style.display =
+            "none";
+
+        document.getElementById("error").style.display =
+            "block";
+
+        delete window[callbackName];
+
+    };
+
+
+    document.body.appendChild(script);
+
+}
+
+
+verifyCertificate();
 
 </script>
 </body>
