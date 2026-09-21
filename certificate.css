@@ -1,0 +1,792 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e9edf3;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172238;
+}
+
+
+/* =================================
+   CERTIFICATE
+================================= */
+
+.certificate {
+
+    width: 1120px;
+    min-height: 790px;
+
+    margin: 35px auto;
+
+    background: #ffffff;
+
+    position: relative;
+
+    padding: 48px 58px 35px;
+
+    border: 2px solid #172238;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+
+    overflow: hidden;
+}
+
+
+/* INNER BORDER */
+
+.inner-border {
+
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+
+    border: 1px solid #aab4c3;
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   TOP
+================================= */
+
+.certificate-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* BRAND */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.brand-logo {
+
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    font-weight: 900;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #082f63,
+            #11abc1
+        );
+
+    border: 4px solid #e6f7fa;
+}
+
+.brand-text h2 {
+
+    font-size: 25px;
+
+    color: #092e5f;
+
+    letter-spacing: -0.5px;
+}
+
+.brand-text span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: #16a9bf;
+
+    font-weight: 700;
+
+    margin-top: 2px;
+}
+
+.brand-text small {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 9px;
+
+    color: #7a8494;
+
+    letter-spacing: 1px;
+}
+
+
+/* QR */
+
+.qr-area {
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+#qrcode {
+
+    width: 95px;
+    height: 95px;
+
+    padding: 4px;
+
+    background: white;
+
+    border: 1px solid #d5dce5;
+}
+
+.qr-area p {
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    margin-top: 5px;
+
+    color: #536174;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* CERTIFICATE ID */
+
+.certificate-id {
+
+    text-align: right;
+
+    margin-top: -8px;
+
+    margin-right: 115px;
+
+    font-size: 12px;
+
+    color: #657184;
+}
+
+.certificate-id strong {
+
+    color: #1b2c45;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.certificate-title {
+
+    text-align: center;
+
+    margin-top: 22px;
+}
+
+.certificate-title h1 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 39px;
+
+    letter-spacing: 5px;
+
+    color: #102b50;
+}
+
+.of {
+
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 6px;
+
+    color: #667284;
+}
+
+
+/* =================================
+   PRESENTED
+================================= */
+
+.presented {
+
+    text-align: center;
+
+    margin-top: 23px;
+}
+
+.presented p {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #a0a7b2;
+
+    font-weight: 600;
+}
+
+.presented h2 {
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+
+    font-size: 43px;
+
+    font-weight: 500;
+
+    color: #101d31;
+
+    margin-top: 5px;
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.certificate-description {
+
+    max-width: 870px;
+
+    margin: 12px auto 20px;
+
+    text-align: center;
+
+    color: #4e596a;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.certificate-description strong {
+
+    color: #172c4a;
+}
+
+
+/* =================================
+   DETAILS
+================================= */
+
+.details-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border: 1px solid #dce1e7;
+
+    max-width: 990px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.detail-box {
+
+    min-height: 65px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-right: 1px solid #dce1e7;
+
+    border-bottom: 1px solid #dce1e7;
+
+    padding: 8px;
+}
+
+.detail-box:nth-child(3n) {
+
+    border-right: none;
+}
+
+.detail-box:nth-child(n+4) {
+
+    border-bottom: none;
+}
+
+.detail-box span {
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    color: #7d8795;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 6px;
+}
+
+.detail-box strong {
+
+    font-size: 12px;
+
+    color: #172238;
+}
+
+
+/* =================================
+   BOTTOM
+================================= */
+
+.certificate-bottom {
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 1fr 1fr;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-top: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* VERIFICATION */
+
+.verification p {
+
+    font-size: 10px;
+
+    color: #667184;
+
+    margin: 6px 0;
+}
+
+.verification strong {
+
+    color: #26364e;
+}
+
+.verification span {
+
+    color: #167d9b;
+}
+
+
+/* SIGNATURE */
+
+.signature {
+
+    text-align: center;
+}
+
+.signature-name {
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 27px;
+
+    color: #182238;
+
+    margin-bottom: -4px;
+}
+
+.signature-line {
+
+    width: 150px;
+
+    height: 1px;
+
+    background: #9ca5b2;
+
+    margin: 0 auto 7px;
+}
+
+.signature strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: #26354b;
+}
+
+.signature span {
+
+    display: block;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+    color: #6d7786;
+}
+
+.signature small {
+
+    display: block;
+
+    font-size: 9px;
+
+    color: #87909d;
+
+    margin-top: 2px;
+}
+
+
+/* =================================
+   BADGES
+================================= */
+
+.badges {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.msme-box {
+
+    width: 75px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.msme-box img {
+
+    max-width: 70px;
+    max-height: 60px;
+
+    object-fit: contain;
+}
+
+
+/* ASSIGNMENT BADGE */
+
+.assignment-badge {
+
+    width: 110px;
+
+    text-align: center;
+
+    padding: 10px 7px;
+
+    border: 1px solid #cbd3dc;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+}
+
+.assignment-badge strong {
+
+    display: block;
+
+    font-size: 8px;
+
+    color: #1d344f;
+
+    letter-spacing: 0.8px;
+}
+
+.assignment-badge span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 7px;
+
+    color: #7a8493;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.certificate-footer {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 8px;
+
+    color: #8992a0;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =================================
+   PRINT
+================================= */
+
+@page {
+
+    size: A4 landscape;
+
+    margin: 0;
+}
+
+@media print {
+
+    body {
+
+        background: white;
+    }
+
+    .certificate {
+
+        width: 297mm;
+
+        height: 210mm;
+
+        min-height: 210mm;
+
+        margin: 0;
+
+        border: 2px solid #172238;
+
+        box-shadow: none;
+
+        page-break-after: avoid;
+    }
+
+}
+
+
+/* =================================
+   MOBILE PREVIEW
+================================= */
+
+@media (max-width: 900px) {
+
+    .certificate {
+
+        width: 96%;
+
+        min-height: auto;
+
+        padding: 35px 25px;
+    }
+
+    .certificate-bottom {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .details-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-box:nth-child(3n) {
+
+        border-right: 1px solid #dce1e7;
+    }
+
+    .detail-box:nth-child(n+4) {
+
+        border-bottom: 1px solid #dce1e7;
+    }
+
+    .certificate-title h1 {
+
+        font-size: 30px;
+    }
+
+    .presented h2 {
+
+        font-size: 34px;
+    }
+
+}
+/* ==============================
+   CERTIFICATE GENERATOR FORM
+================================ */
+
+.generator-box {
+    width: 90%;
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.generator-box h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    color: #102f5f;
+}
+
+.generator-box > p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: #26364e;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #159db8;
+}
+
+.generate-btn {
+    display: block;
+    margin: 25px auto 0;
+    padding: 13px 32px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #092f63, #13aabd);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+}
+
+.print-area {
+    text-align: center;
+    margin: 25px auto 50px;
+}
+
+.print-area button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #172238;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@media (max-width: 650px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .generator-box {
+        width: 94%;
+        padding: 20px;
+    }
+}
+
+
+/* PRINT: FORM & BUTTON HIDE */
+
+@media print {
+
+    .generator-box,
+    .print-area {
+        display: none !important;
+    }
+
+    .certificate {
+        margin: 0 !important;
+    }
+}
+.msme-logo {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain;
+    display: block;
+}
