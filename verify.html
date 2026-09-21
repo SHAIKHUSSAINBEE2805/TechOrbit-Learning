@@ -314,143 +314,69 @@
 
     <script>
 
-        /*
-        =====================================================
-        CERTIFICATE DATABASE
-        =====================================================
+const certificates = {
 
-        Add every issued certificate here.
+    "TOL/PY/2026/0001": {
+        name: "Student Name",
+        program: "Python Programming Internship",
+        duration: "16 Weeks",
+        date: "21 December 2026"
+    },
 
-        Certificate ID must exactly match
-        the ID used while generating the certificate.
-        */
+    "TOL/JAVA/2026/0002": {
+        name: "Student Two",
+        program: "Java Programming Internship",
+        duration: "12 Weeks",
+        date: "21 December 2026"
+    },
 
+    "TOL/PY/2026/0003": {
+        name: "Khasim",
+        program: "Python Programming Internship",
+        duration: "16 Weeks",
+        date: "21 December 2026"
+    }
 
-        const certificates = {
-
-            /* =========================
-               SAMPLE CERTIFICATE
-               ========================= */
-
-            "TOL/PY/2026/0001": {
-
-                name: "Student Name",
-
-                program: "Python Programming Internship",
-
-                duration: "16 Weeks",
-
-                date: "21 December 2026"
-
-            },
+};
 
 
-            /* =========================
-               SAMPLE JAVA CERTIFICATE
-               ========================= */
+const params = new URLSearchParams(window.location.search);
 
-            "TOL/JAVA/2026/0002": {
+const id = params.get("id");
 
-                name: "Student Two",
-
-                program: "Java Programming Internship",
-
-                duration: "12 Weeks",
-
-                date: "21 December 2026"
-
-            },
-
-            "TOL/PY/2026/0003": {
-
-                name: "Khasim",
-
-                program: "Python Programming Internship",
-
-                duration: "16 Weeks",
-
-                date: "21 December 2026"
-            }
-
-        };
+const certificate = certificates[id];
 
 
-        /*
-        =====================================================
-        GET CERTIFICATE ID FROM QR CODE
-        =====================================================
-        */
+if (certificate) {
 
-        const params =
-            new URLSearchParams(window.location.search);
+    document.getElementById("name").textContent =
+        certificate.name;
 
+    document.getElementById("program").textContent =
+        certificate.program;
 
-        const id =
-            params.get("id");
+    document.getElementById("duration").textContent =
+        certificate.duration;
 
+    document.getElementById("date").textContent =
+        certificate.date;
 
-        /*
-        =====================================================
-        FIND CERTIFICATE
-        =====================================================
-        */
+    document.getElementById("certificateId").textContent =
+        id;
 
-        const certificate =
-            certificates[id];
+} else {
 
+    document.getElementById("details").style.display =
+        "none";
 
-        /*
-        =====================================================
-        DISPLAY CERTIFICATE
-        =====================================================
-        */
+    document.getElementById("verified").style.display =
+        "none";
 
-        if (certificate) {
+    document.getElementById("error").style.display =
+        "block";
 
-            document.getElementById("name").textContent =
-                certificate.name;
+}
 
-
-            document.getElementById("program").textContent =
-                certificate.program;
-
-
-            document.getElementById("duration").textContent =
-                certificate.duration;
-
-
-            document.getElementById("date").textContent =
-                certificate.date;
-
-
-            document.getElementById("certificateId").textContent =
-                id;
-
-        }
-
-
-        /*
-        =====================================================
-        CERTIFICATE NOT FOUND
-        =====================================================
-        */
-
-        else {
-
-            document.getElementById("details").style.display =
-                "none";
-
-
-            document.getElementById("verified").style.display =
-                "none";
-
-
-            document.getElementById("error").style.display =
-                "block";
-
-        }
-
-    </script>
-
+</script>
 </body>
 </html>
