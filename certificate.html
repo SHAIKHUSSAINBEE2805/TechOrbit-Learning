@@ -1,599 +1,905 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>TechOrbit Learning - Certificate Generator</title>
 
     <link rel="stylesheet" href="certificate.css">
 
+    <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </head>
+
 
 <body>
 
-<!-- ==============================
-     CERTIFICATE DETAILS FORM
-================================ -->
 
-<div class="generator-box">
+<!-- =====================================================
+     CERTIFICATE GENERATOR
+     ===================================================== -->
 
-    <h1>TechOrbit Learning</h1>
-    <p>Certificate Generator</p>
+<div class="generator-page">
+
+    <div class="generator-header">
+
+        <h1>TechOrbit Learning</h1>
+
+        <p>Certificate Generator</p>
+
+    </div>
+
 
     <form id="certificateForm">
 
-        <div class="form-row">
+
+        <div class="form-grid">
+
+
+            <!-- Student Name -->
 
             <div class="form-group">
-                <label>Student Full Name</label>
+
+                <label for="studentName">
+                    Student Full Name
+                </label>
+
                 <input
                     type="text"
-                    id="inputStudentName"
+                    id="studentName"
                     placeholder="Enter student name"
-                    required>
+                    required
+                >
+
             </div>
 
+
+            <!-- Program -->
+
             <div class="form-group">
-                <label>Program / Internship</label>
+
+                <label for="program">
+
+                    Program / Internship
+
+                </label>
+
                 <input
                     type="text"
-                    id="inputProgram"
-                    placeholder="Example: Python Programming Internship"
-                    required>
+                    id="program"
+                    placeholder="Python Programming Internship"
+                    required
+                >
+
             </div>
 
-        </div>
 
-
-        <div class="form-row">
+            <!-- Domain -->
 
             <div class="form-group">
-                <label>Domain</label>
+
+                <label for="domain">
+
+                    Domain
+
+                </label>
+
                 <input
                     type="text"
-                    id="inputDomain"
-                    placeholder="Example: Python Programming"
-                    required>
+                    id="domain"
+                    placeholder="Python Programming"
+                    required
+                >
+
             </div>
 
+
+            <!-- Duration -->
+
             <div class="form-group">
-                <label>Duration</label>
-                <select id="inputDuration" required>
-                    <option value="">Select Duration</option>
-                    <option value="4 Weeks">4 Weeks</option>
-                    <option value="12 Weeks">12 Weeks</option>
-                    <option value="16 Weeks">16 Weeks</option>
+
+                <label for="duration">
+
+                    Duration
+
+                </label>
+
+                <select id="duration" required>
+
+                    <option value="">
+                        Select Duration
+                    </option>
+
+                    <option value="4 Weeks">
+                        4 Weeks
+                    </option>
+
+                    <option value="12 Weeks">
+                        12 Weeks
+                    </option>
+
+                    <option value="16 Weeks">
+                        16 Weeks
+                    </option>
+
                 </select>
+
             </div>
 
-        </div>
 
-
-        <div class="form-row">
+            <!-- Start Date -->
 
             <div class="form-group">
-                <label>Start Date</label>
+
+                <label for="startDate">
+
+                    Start Date
+
+                </label>
+
                 <input
                     type="date"
-                    id="inputStartDate"
-                    required>
+                    id="startDate"
+                >
+
             </div>
 
+
+            <!-- End Date -->
+
             <div class="form-group">
-                <label>End Date</label>
+
+                <label for="endDate">
+
+                    End Date
+
+                </label>
+
                 <input
                     type="date"
-                    id="inputEndDate"
-                    required>
+                    id="endDate"
+                >
+
             </div>
 
-        </div>
 
-
-        <div class="form-row">
+            <!-- Issue Date -->
 
             <div class="form-group">
-                <label>Issue Date</label>
+
+                <label for="issueDate">
+
+                    Issue Date
+
+                </label>
+
                 <input
                     type="date"
-                    id="inputIssueDate"
-                    required>
+                    id="issueDate"
+                    required
+                >
+
             </div>
 
+
+            <!-- Certificate ID -->
+
             <div class="form-group">
-                <label>Certificate ID</label>
+
+                <label for="certificateId">
+
+                    Certificate ID
+
+                </label>
+
                 <input
                     type="text"
-                    id="inputCertificateId"
-                    placeholder="Example: TOL/PY/2026/0001"
-                    required>
+                    id="certificateId"
+                    placeholder="TOL/PY/2026/0001"
+                    required
+                >
+
             </div>
+
 
         </div>
 
 
-        <button type="submit" class="generate-btn">
+        <button
+            type="submit"
+            class="generate-btn">
+
             Generate Certificate
+
         </button>
+
 
     </form>
 
 </div>
 
 
-<!-- ==============================
+
+<!-- =====================================================
      CERTIFICATE
-================================ -->
+     ===================================================== -->
 
-<div class="certificate" id="certificate">
+<div
+    id="certificate"
+    class="certificate-page">
 
-    <div class="inner-border"></div>
+
+    <!-- Certificate Border -->
+
+    <div class="certificate-border">
 
 
-    <!-- TOP -->
+        <!-- =================================================
+             TOP AREA
+             ================================================= -->
 
-    <div class="certificate-top">
+        <div class="certificate-top">
 
-        <div class="brand">
 
-            <div class="brand-logo">
-                TO
+            <!-- TechOrbit Logo / Brand -->
+
+            <div class="brand-area">
+
+                <div class="to-logo">
+
+                    TO
+
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        TechOrbit
+                    </strong>
+
+                    <span>
+                        LEARNING
+                    </span>
+
+                    <small>
+                        Learn • Build • Grow
+                    </small>
+
+                </div>
+
             </div>
 
-            <div class="brand-text">
 
-                <h2>TechOrbit</h2>
+            <!-- Certificate ID + QR -->
 
-                <span>LEARNING</span>
+            <div class="qr-area">
 
-                <small>Learn • Build • Grow</small>
+                <div class="qr-info">
+
+                    <span>
+                        Certificate ID:
+                    </span>
+
+                    <strong id="topCertificateId">
+                        TOL/2026/0001
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="qrcode"
+                    class="qrcode">
+                </div>
+
+
+                <div class="scan-text">
+
+                    Scan to Verify
+
+                </div>
 
             </div>
 
-        </div>
-
-
-        <!-- QR -->
-
-        <div class="qr-area">
-
-            <div id="qrcode"></div>
-
-            <p>Scan to Verify</p>
 
         </div>
 
-    </div>
 
 
-    <!-- CERTIFICATE ID -->
+        <!-- =================================================
+             TITLE
+             ================================================= -->
 
-    <div class="certificate-id">
+        <div class="certificate-title">
 
-        <strong>Certificate ID:</strong>
+            <div class="small-title">
 
-        <span id="certificateId">
-            TOL/2026/0001
-        </span>
+                THIS CERTIFICATE IS PROUDLY PRESENTED TO
 
-    </div>
+            </div>
 
+            <h1>
+                CERTIFICATE
+            </h1>
 
-    <!-- TITLE -->
+            <h2>
+                OF COMPLETION
+            </h2>
 
-    <div class="certificate-title">
-
-        <h1>CERTIFICATE</h1>
-
-        <div class="of">
-            OF COMPLETION
         </div>
 
-    </div>
 
 
-    <!-- STUDENT -->
+        <!-- =================================================
+             STUDENT NAME
+             ================================================= -->
 
-    <div class="presented">
+        <div class="student-name"
+             id="displayStudentName">
 
-        <p>THIS CERTIFICATE IS PROUDLY PRESENTED TO</p>
-
-        <h2 id="studentName">
             Student Name
-        </h2>
 
-    </div>
+        </div>
 
 
-    <!-- DESCRIPTION -->
 
-    <div class="certificate-description">
+        <!-- =================================================
+             DESCRIPTION
+             ================================================= -->
 
-        <p>
+        <div class="certificate-description">
 
             This certificate is awarded to
 
-            <strong id="studentNameText">
+            <strong id="descriptionName">
                 Student Name
             </strong>
 
             for successfully completing the
 
-            <strong id="programNameText">
+            <strong id="descriptionProgram">
                 Internship Program
             </strong>
 
             at TechOrbit Learning.
 
-            During the program, the participant successfully completed
-            the assigned learning activities, practical tasks and
-            project requirements.
-
-        </p>
-
-    </div>
-
-
-    <!-- DETAILS -->
-
-    <div class="details-grid">
-
-        <div class="detail-box">
-
-            <span>DOMAIN</span>
-
-            <strong id="domain">
-                Python Programming
-            </strong>
+            During the program, the participant demonstrated dedication, consistency, technical skills, and professionalism, while completing assigned learning module and project work. we appreciate the commitment shown and wish them continued success in their career.
 
         </div>
 
 
-        <div class="detail-box">
 
-            <span>DURATION</span>
+        <!-- =================================================
+             PROGRAM DETAILS TABLE
+             ================================================= -->
 
-            <strong id="duration">
-                16 Weeks
-            </strong>
-
-        </div>
+        <div class="details-table">
 
 
-        <div class="detail-box">
-
-            <span>START DATE</span>
-
-            <strong id="startDate">
-                —
-            </strong>
-
-        </div>
-
-
-        <div class="detail-box">
-
-            <span>END DATE</span>
-
-            <strong id="endDate">
-                —
-            </strong>
-
-        </div>
-
-
-        <div class="detail-box">
-
-            <span>MODE</span>
-
-            <strong>
-                Online / Remote
-            </strong>
-
-        </div>
-
-
-        <div class="detail-box">
-
-            <span>STATUS</span>
-
-            <strong>
-                Successfully Completed
-            </strong>
-
-        </div>
-
-    </div>
-
-
-    <!-- BOTTOM -->
-
-    <div class="certificate-bottom">
-
-
-        <!-- VERIFICATION -->
-
-        <div class="verification">
-
-            <p>
-
-                ✓
-
-                <strong>Verify at:</strong>
+            <div class="detail-box">
 
                 <span>
-                    TechOrbit Learning
+                    DOMAIN
                 </span>
 
-            </p>
+                <strong id="displayDomain">
+                    Python Programming
+                </strong>
 
-
-            <p>
-
-                ◉
-
-                <strong>Certificate ID:</strong>
-
-                <span id="bottomCertificateId">
-                    TOL/2026/0001
-                </span>
-
-            </p>
-
-
-            <p>
-
-                ▣
-
-                <strong>Issue Date:</strong>
-
-                <span id="issueDate">
-                    —
-                </span>
-
-            </p>
-
-        </div>
-
-
-        <!-- SIGNATURE -->
-
-        <div class="signature">
-
-            <div class="signature-name">
-                Sk. Hussain Bee
             </div>
 
-            <div class="signature-line"></div>
 
-            
+            <div class="detail-box">
 
-            <span>
-                Founder & CEO
-            </span>
+                <span>
+                    DURATION
+                </span>
 
-            <small>
-                TechOrbit Learning
-            </small>
+                <strong id="displayDuration">
+                    16 Weeks
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>
+                    START DATE
+                </span>
+
+                <strong id="displayStartDate">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>
+                    END DATE
+                </span>
+
+                <strong id="displayEndDate">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>
+                    MODE
+                </span>
+
+                <strong>
+                    Online / Remote
+                </strong>
+
+            </div>
+
+
+            <div class="detail-box">
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong>
+                    Successfully Completed
+                </strong>
+
+            </div>
+
 
         </div>
 
 
-        <!-- BADGES -->
 
-        <div class="badges">
+        <!-- =================================================
+             BOTTOM ROW
+             ================================================= -->
 
-            <div class="msme-box">
+        <div class="certificate-footer">
+
+
+            <!-- =============================================
+                 1. VERIFY INFORMATION
+                 ============================================= -->
+
+            <div class="verify-section">
+
+                <div>
+
+                    ✓ Verify at:
+
+                    <strong>
+                        TechOrbit Learning
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    ● Certificate ID:
+
+                    <strong id="displayCertificateId">
+
+                        TOL/2026/0001
+
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    ▣ Issue Date:
+
+                    <strong id="displayIssueDate">
+
+                        —
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 2. SIGNATURE
+                 ============================================= -->
+
+            <div class="signature-section">
+
+                <div class="signature-name">
+
+                    Sk. Hussain Bee
+
+                </div>
+
+
+                <div class="signature-line">
+                </div>
+
+
+                <div class="signature-role">
+
+                    Founder & CEO
+
+                </div>
+
+
+                <div class="signature-company">
+
+                    TechOrbit Learning
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 3. MSME LOGO
+                 ============================================= -->
+
+            <div class="msme-section">
 
                 <img
                     src="msme-logo.jpeg"
                     alt="MSME Logo"
-                    class="msme-logo">
+                >
 
             </div>
 
 
-            <div class="assignment-badge">
 
-                <strong>
+            <!-- =============================================
+                 4. TECHORBIT BADGE
+                 ============================================= -->
+
+            <div class="assignment-section">
+
+
+                <!-- Round Badge -->
+
+                <div class="techorbit-badge">
+
+                    <div class="badge-inner">
+
+                        <strong>
+                            TECHORBIT
+                        </strong>
+
+                        <span>
+                            LEARNING
+                        </span>
+
+                        <b>
+                            ★
+                        </b>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Badge Text -->
+
+                <div class="assignment-title">
+
                     ASSIGNMENT BASED
-                </strong>
 
-                <span>
-                    CERTIFIED PROGRAM
-                </span>
+                </div>
+
+
+                <div class="assignment-subtitle">
+
+                    Certified Program
+
+                </div>
 
             </div>
+
 
         </div>
 
-    </div>
 
 
-    <!-- FOOTER -->
+        <!-- =================================================
+             BOTTOM TAGLINE
+             ================================================= -->
 
-    <div class="certificate-footer">
+        <div class="certificate-tagline">
 
-        <span>
-            TechOrbit Learning
-        </span>
+            TechOrbit Learning • Learn • Build • Grow • Online / Remote Learning Program
 
-        <span>•</span>
+        </div>
 
-        <span>
-            Learn • Build • Grow
-        </span>
-
-        <span>•</span>
-
-        <span>
-            Online / Remote Learning Program
-        </span>
 
     </div>
 
 </div>
 
 
-<!-- PRINT BUTTON -->
+
+<!-- =====================================================
+     PRINT BUTTON
+     ===================================================== -->
 
 <div class="print-area">
 
-    <button onclick="window.print()">
+    <button
+        onclick="window.print()"
+        class="print-btn">
+
         Print / Save Certificate
+
     </button>
 
 </div>
 
 
-<!-- ==============================
+
+<!-- =====================================================
      JAVASCRIPT
-================================ -->
+     ===================================================== -->
 
 <script>
 
-const form = document.getElementById("certificateForm");
 
-form.addEventListener("submit", function(event) {
+/* =====================================================
+   FORM SUBMISSION
+   ===================================================== */
 
-    event.preventDefault();
+document
+    .getElementById("certificateForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
 
 
-    /* GET FORM VALUES */
+        /* Get values */
 
-    const studentName =
-        document.getElementById("inputStudentName").value.trim();
+        const studentName =
+            document
+                .getElementById("studentName")
+                .value
+                .trim();
 
-    const program =
-        document.getElementById("inputProgram").value.trim();
 
-    const domain =
-        document.getElementById("inputDomain").value.trim();
+        const program =
+            document
+                .getElementById("program")
+                .value
+                .trim();
 
-    const duration =
-        document.getElementById("inputDuration").value;
 
-    const startDate =
-        formatDate(
-            document.getElementById("inputStartDate").value
+        const domain =
+            document
+                .getElementById("domain")
+                .value
+                .trim();
+
+
+        const duration =
+            document
+                .getElementById("duration")
+                .value;
+
+
+        const startDate =
+            document
+                .getElementById("startDate")
+                .value;
+
+
+        const endDate =
+            document
+                .getElementById("endDate")
+                .value;
+
+
+        const issueDate =
+            document
+                .getElementById("issueDate")
+                .value;
+
+
+        const certificateId =
+            document
+                .getElementById("certificateId")
+                .value
+                .trim();
+
+
+
+        /* =================================================
+           Format Date
+           ================================================= */
+
+        function formatDate(dateValue) {
+
+            if (!dateValue) {
+
+                return "—";
+
+            }
+
+
+            const date =
+                new Date(dateValue + "T00:00:00");
+
+
+            return date.toLocaleDateString(
+                "en-GB",
+                {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        const formattedStartDate =
+            formatDate(startDate);
+
+
+        const formattedEndDate =
+            formatDate(endDate);
+
+
+        const formattedIssueDate =
+            formatDate(issueDate);
+
+
+
+        /* =================================================
+           Update Certificate
+           ================================================= */
+
+        document
+            .getElementById("displayStudentName")
+            .textContent =
+            studentName;
+
+
+        document
+            .getElementById("descriptionName")
+            .textContent =
+            studentName;
+
+
+        document
+            .getElementById("descriptionProgram")
+            .textContent =
+            program;
+
+
+        document
+            .getElementById("displayDomain")
+            .textContent =
+            domain;
+
+
+        document
+            .getElementById("displayDuration")
+            .textContent =
+            duration;
+
+
+        document
+            .getElementById("displayStartDate")
+            .textContent =
+            formattedStartDate;
+
+
+        document
+            .getElementById("displayEndDate")
+            .textContent =
+            formattedEndDate;
+
+
+        document
+            .getElementById("displayIssueDate")
+            .textContent =
+            formattedIssueDate;
+
+
+        document
+            .getElementById("displayCertificateId")
+            .textContent =
+            certificateId;
+
+
+        document
+            .getElementById("topCertificateId")
+            .textContent =
+            certificateId;
+
+
+
+        /* =================================================
+           CREATE QR CODE
+           ================================================= */
+
+        const verificationURL =
+
+            "https://shaikhussainbee2805.github.io/TechOrbit-Learning/verify.html?id="
+
+            + encodeURIComponent(certificateId);
+
+
+
+        const qrContainer =
+            document.getElementById("qrcode");
+
+
+        qrContainer.innerHTML = "";
+
+
+
+        new QRCode(
+            qrContainer,
+            {
+                text: verificationURL,
+
+                width: 75,
+
+                height: 75,
+
+                correctLevel:
+                    QRCode.CorrectLevel.H
+            }
         );
 
-    const endDate =
-        formatDate(
-            document.getElementById("inputEndDate").value
-        );
-
-    const issueDate =
-        formatDate(
-            document.getElementById("inputIssueDate").value
-        );
-
-    const certificateId =
-        document.getElementById("inputCertificateId").value.trim();
 
 
-    /* UPDATE CERTIFICATE */
+        /* =================================================
+           Show Certificate
+           ================================================= */
 
-    document.getElementById("studentName").textContent =
-        studentName;
-
-    document.getElementById("studentNameText").textContent =
-        studentName;
-
-    document.getElementById("programNameText").textContent =
-        program;
-
-    document.getElementById("domain").textContent =
-        domain;
-
-    document.getElementById("duration").textContent =
-        duration;
-
-    document.getElementById("startDate").textContent =
-        startDate;
-
-    document.getElementById("endDate").textContent =
-        endDate;
-
-    document.getElementById("issueDate").textContent =
-        issueDate;
-
-    document.getElementById("certificateId").textContent =
-        certificateId;
-
-    document.getElementById("bottomCertificateId").textContent =
-        certificateId;
+        document
+            .getElementById("certificate")
+            .style.display =
+            "block";
 
 
-    /* ==============================
-       UPDATE QR CODE
-    ============================== */
-
-    const qrBox =
-        document.getElementById("qrcode");
-
-    qrBox.innerHTML = "";
+        document
+            .querySelector(".print-area")
+            .style.display =
+            "block";
 
 
-    const verificationURL =
-        "https://shaikhussainbee2805.github.io/TechOrbit-Learning/verify.html?id="
-        + encodeURIComponent(certificateId);
+        /* Scroll to certificate */
 
-
-    new QRCode(qrBox, {
-
-        text: verificationURL,
-
-        width: 95,
-
-        height: 95,
-
-        colorDark: "#10233f",
-
-        colorLight: "#ffffff",
-
-        correctLevel:
-            QRCode.CorrectLevel.H
+        document
+            .getElementById("certificate")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
     });
 
 
-    /* SCROLL TO CERTIFICATE */
-
-    document.getElementById("certificate")
-        .scrollIntoView({
-            behavior: "smooth"
-        });
-
-});
-
-
-/* ==============================
-   DATE FORMAT
-================================ */
-
-function formatDate(dateValue) {
-
-    if (!dateValue) {
-        return "—";
-    }
-
-    const date =
-        new Date(dateValue + "T00:00:00");
-
-    return date.toLocaleDateString(
-        "en-GB",
-        {
-            day: "2-digit",
-            month: "long",
-            year: "numeric"
-        }
-    );
-}
-
 </script>
 
+
 </body>
+
 </html>
