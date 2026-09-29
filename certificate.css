@@ -1,61 +1,242 @@
+/* =====================================================
+   GENERAL
+   ===================================================== */
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    background: #e9edf3;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #172238;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: #f1f3f6;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #222;
+
 }
 
 
-/* =================================
-   CERTIFICATE
-================================= */
 
-.certificate {
+/* =====================================================
+   GENERATOR
+   ===================================================== */
+
+.generator-page {
+
+    width: 92%;
+
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.08);
+
+}
+
+
+.generator-header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.generator-header h1 {
+
+    margin: 0;
+
+    color: #123b72;
+
+    font-size: 30px;
+
+}
+
+
+.generator-header p {
+
+    margin: 7px 0 0;
+
+    color: #888;
+
+    font-size: 16px;
+
+}
+
+
+
+/* =====================================================
+   FORM GRID
+   ===================================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.form-group label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d5dbe3;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: #ffffff;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #159bd7;
+
+    box-shadow:
+        0 0 0 2px rgba(21,155,215,0.1);
+
+}
+
+
+
+/* =====================================================
+   GENERATE BUTTON
+   ===================================================== */
+
+.generate-btn {
+
+    display: block;
+
+    margin: 28px auto 0;
+
+    padding: 13px 30px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c4b91,
+            #159bd7
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.generate-btn:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+
+/* =====================================================
+   CERTIFICATE PAGE
+   ===================================================== */
+
+.certificate-page {
+
+    display: none;
 
     width: 1120px;
+
     min-height: 790px;
 
     margin: 35px auto;
 
     background: #ffffff;
 
+    padding: 18px;
+
+}
+
+
+.certificate-border {
+
+    width: 100%;
+
+    min-height: 754px;
+
+    border: 1.5px solid #1b3558;
+
+    padding: 28px 38px 18px;
+
     position: relative;
 
-    padding: 48px 58px 35px;
+    background: #ffffff;
 
-    border: 2px solid #172238;
-
-    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
-
-    overflow: hidden;
 }
 
 
-/* INNER BORDER */
 
-.inner-border {
-
-    position: absolute;
-
-    top: 13px;
-    left: 13px;
-    right: 13px;
-    bottom: 13px;
-
-    border: 1px solid #aab4c3;
-
-    pointer-events: none;
-}
-
-
-/* =================================
-   TOP
-================================= */
+/* =====================================================
+   TOP AREA
+   ===================================================== */
 
 .certificate-top {
 
@@ -65,540 +246,759 @@ body {
 
     align-items: flex-start;
 
-    position: relative;
-
-    z-index: 2;
 }
 
 
-/* BRAND */
-
-.brand {
+.brand-area {
 
     display: flex;
 
     align-items: center;
 
-    gap: 13px;
+    gap: 9px;
+
 }
 
-.brand-logo {
 
-    width: 65px;
-    height: 65px;
+.to-logo {
+
+    width: 85px;
+
+    height: 85px;
 
     border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 23px;
-    font-weight: 900;
-
-    color: white;
 
     background:
         linear-gradient(
             135deg,
-            #082f63,
-            #11abc1
+            #0c4b91,
+            #1aa6df
         );
 
-    border: 4px solid #e6f7fa;
-}
+    color: white;
 
-.brand-text h2 {
+    display: flex;
 
-    font-size: 25px;
+    align-items: center;
 
-    color: #092e5f;
+    justify-content: center;
 
-    letter-spacing: -0.5px;
-}
+    font-size: 30px;
 
-.brand-text span {
+    font-weight: 900;
 
-    display: block;
-
-    font-size: 9px;
-
-    letter-spacing: 5px;
-
-    color: #16a9bf;
-
-    font-weight: 700;
-
-    margin-top: 2px;
-}
-
-.brand-text small {
-
-    display: block;
-
-    margin-top: 6px;
-
-    font-size: 9px;
-
-    color: #7a8494;
-
-    letter-spacing: 1px;
 }
 
 
-/* QR */
-
-.qr-area {
-
-    text-align: center;
-
-    position: relative;
-
-    z-index: 3;
-}
-
-#qrcode {
-
-    width: 95px;
-    height: 95px;
-
-    padding: 4px;
-
-    background: white;
-
-    border: 1px solid #d5dce5;
-}
-
-.qr-area p {
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    margin-top: 5px;
-
-    color: #536174;
-
-    letter-spacing: 0.5px;
-}
-
-
-/* CERTIFICATE ID */
-
-.certificate-id {
-
-    text-align: right;
-
-    margin-top: -8px;
-
-    margin-right: 115px;
-
-    font-size: 12px;
-
-    color: #657184;
-}
-
-.certificate-id strong {
-
-    color: #1b2c45;
-}
-
-
-/* =================================
-   TITLE
-================================= */
-
-.certificate-title {
-
-    text-align: center;
-
-    margin-top: 22px;
-}
-
-.certificate-title h1 {
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 39px;
-
-    letter-spacing: 5px;
-
-    color: #102b50;
-}
-
-.of {
-
-    margin-top: 3px;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing: 6px;
-
-    color: #667284;
-}
-
-
-/* =================================
-   PRESENTED
-================================= */
-
-.presented {
-
-    text-align: center;
-
-    margin-top: 23px;
-}
-
-.presented p {
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: #a0a7b2;
-
-    font-weight: 600;
-}
-
-.presented h2 {
-
-    font-family: "Brush Script MT", "Segoe Script", cursive;
-
-    font-size: 43px;
-
-    font-weight: 500;
-
-    color: #101d31;
-
-    margin-top: 5px;
-}
-
-
-/* =================================
-   DESCRIPTION
-================================= */
-
-.certificate-description {
-
-    max-width: 870px;
-
-    margin: 12px auto 20px;
-
-    text-align: center;
-
-    color: #4e596a;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-}
-
-.certificate-description strong {
-
-    color: #172c4a;
-}
-
-
-/* =================================
-   DETAILS
-================================= */
-
-.details-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    border: 1px solid #dce1e7;
-
-    max-width: 990px;
-
-    margin: 0 auto;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-.detail-box {
-
-    min-height: 65px;
+.brand-text {
 
     display: flex;
 
     flex-direction: column;
 
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    border-right: 1px solid #dce1e7;
-
-    border-bottom: 1px solid #dce1e7;
-
-    padding: 8px;
 }
 
-.detail-box:nth-child(3n) {
 
-    border-right: none;
+.brand-text strong {
+
+    font-size: 32px;
+
+    color: #123b72;
+
 }
 
-.detail-box:nth-child(n+4) {
 
-    border-bottom: none;
-}
+.brand-text span {
 
-.detail-box span {
-
-    font-size: 8px;
+    font-size: 15px;
 
     font-weight: 800;
 
-    color: #7d8795;
+    letter-spacing: 2px;
 
-    letter-spacing: 1.3px;
+    color: #159bd7;
 
-    margin-bottom: 6px;
-}
-
-.detail-box strong {
-
-    font-size: 12px;
-
-    color: #172238;
 }
 
 
-/* =================================
-   BOTTOM
-================================= */
+.brand-text small {
 
-.certificate-bottom {
+    font-size: 10px;
+
+    color: #999;
+
+    margin-top: 2px;
+
+}
+
+
+
+/* =====================================================
+   QR AREA
+   ===================================================== */
+
+.qr-area {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+}
+
+
+.qr-info {
+
+    font-size: 7px;
+
+    color: #555;
+
+    margin-bottom: 5px;
+
+}
+
+
+.qr-info span {
+
+    margin-right: 3px;
+
+}
+
+
+.qr-info strong {
+
+    color: #444;
+
+}
+
+
+.qrcode {
+
+    width: 95px;
+
+    height: 95px;
+
+}
+
+
+.qrcode img {
+
+    width: 95px !important;
+
+    height: 95px !important;
+
+}
+
+
+.scan-text {
+
+    font-size: 6px;
+
+    color: #777;
+
+    margin-top: 3px;
+
+}
+
+
+
+/* =====================================================
+   CERTIFICATE TITLE
+   ===================================================== */
+
+.certificate-title {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+}
+
+
+.small-title {
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color: #aaa;
+
+    margin-bottom: 8px;
+
+}
+
+
+.certificate-title h1 {
+
+    margin: 0;
+
+    color: #173b68;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.certificate-title h2 {
+
+    margin: 2px 0 0;
+
+    color: #555;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+
+/* =====================================================
+   STUDENT NAME
+   ===================================================== */
+
+.student-name {
+
+    text-align: center;
+
+    margin-top: 10px;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 27px;
+
+    font-weight: 600;
+
+    color: #172d4d;
+
+}
+
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.certificate-description {
+
+    max-width: 900px;
+
+    margin: 10px auto 0;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #777;
+
+}
+
+
+.certificate-description strong {
+
+    color: #333;
+
+}
+
+
+
+/* =====================================================
+   DETAILS TABLE
+   ===================================================== */
+
+.details-table {
+
+    width: 100%;
+
+    margin-top: 18px;
 
     display: grid;
 
     grid-template-columns:
-        1.3fr 1fr 1fr;
+        repeat(2, 1fr);
 
-    align-items: end;
+    border-top: 1px solid #e4e8ed;
 
-    gap: 30px;
+    border-left: 1px solid #e4e8ed;
 
-    margin-top: 22px;
-
-    position: relative;
-
-    z-index: 2;
 }
 
 
-/* VERIFICATION */
+.detail-box {
 
-.verification p {
+    min-height: 55px;
 
-    font-size: 10px;
+    border-right: 2px solid #e4e8ed;
 
-    color: #667184;
-
-    margin: 6px 0;
-}
-
-.verification strong {
-
-    color: #26364e;
-}
-
-.verification span {
-
-    color: #167d9b;
-}
-
-
-/* SIGNATURE */
-
-.signature {
-
-    text-align: center;
-}
-
-.signature-name {
-
-    font-family: "Brush Script MT", cursive;
-
-    font-size: 27px;
-
-    color: #182238;
-
-    margin-bottom: -4px;
-}
-
-.signature-line {
-
-    width: 150px;
-
-    height: 1px;
-
-    background: #9ca5b2;
-
-    margin: 0 auto 7px;
-}
-
-.signature strong {
-
-    display: block;
-
-    font-size: 11px;
-
-    color: #26354b;
-}
-
-.signature span {
-
-    display: block;
-
-    font-size: 10px;
-
-    margin-top: 3px;
-
-    color: #6d7786;
-}
-
-.signature small {
-
-    display: block;
-
-    font-size: 9px;
-
-    color: #87909d;
-
-    margin-top: 2px;
-}
-
-
-/* =================================
-   BADGES
-================================= */
-
-.badges {
+    border-bottom: 2px solid #e4e8ed;
 
     display: flex;
 
-    justify-content: center;
+    flex-direction: column;
 
     align-items: center;
 
-    gap: 15px;
-}
-
-.msme-box {
-
-    width: 75px;
-    height: 65px;
-
-    display: flex;
-
-    align-items: center;
     justify-content: center;
-}
 
-.msme-box img {
-
-    max-width: 70px;
-    max-height: 60px;
-
-    object-fit: contain;
 }
 
 
-/* ASSIGNMENT BADGE */
-
-.assignment-badge {
-
-    width: 110px;
-
-    text-align: center;
-
-    padding: 10px 7px;
-
-    border: 1px solid #cbd3dc;
-
-    border-radius: 8px;
-
-    background: #f8fafc;
-}
-
-.assignment-badge strong {
-
-    display: block;
-
-    font-size: 8px;
-
-    color: #1d344f;
-
-    letter-spacing: 0.8px;
-}
-
-.assignment-badge span {
-
-    display: block;
-
-    margin-top: 4px;
+.detail-box span {
 
     font-size: 7px;
 
-    color: #7a8493;
+    letter-spacing: 2px;
+
+    color: #222;
+
+    font-weight: 800;
+
+    margin-bottom: 7px;
+
 }
 
 
-/* =================================
-   FOOTER
-================================= */
+.detail-box strong {
+
+    font-size: 9px;
+
+    color: #222;
+
+}
+
+
+
+/* =====================================================
+   BOTTOM FOOTER ROW
+   ===================================================== */
 
 .certificate-footer {
 
-    position: absolute;
+    width: 100%;
 
-    bottom: 20px;
+    margin-top: 24px;
 
-    left: 0;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+
+/* =====================================================
+   VERIFY SECTION
+   ===================================================== */
+
+.verify-section {
+
+    flex: 0 0 150px;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+    color: #555;
+
+}
+
+
+.verify-section div {
+
+    white-space: nowrap;
+
+}
+
+
+.verify-section strong {
+
+    color: #444;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =====================================================
+   SIGNATURE
+   ===================================================== */
+
+.signature-section {
+
+    flex: 0 0 130px;
+
+    text-align: center;
+
+
+}
+
+
+.signature-name {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #172d4d;
+
+    line-height: 1.2;
+    white-space: nowrap;
+
+}
+
+
+.signature-line {
+
+    width: 125px;
+
+    height: 2px;
+
+    background: #555;
+
+    margin: 5px auto 5px;
+
+}
+
+
+.signature-role {
+
+    font-size: 11px;
+
+    color: #777;
+
+}
+
+
+.signature-company {
+
+    font-size: 11px;
+
+    color: #999;
+
+    margin-top: 2px;
+
+}
+
+
+
+/* =====================================================
+   MSME LOGO
+   ===================================================== */
+
+.msme-section {
+
+    flex: 0 0 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.msme-section img {
+
+    width: 150px !important;
+
+    height: 120px !important;
+
+    max-width: none !important;
+
+    max-height: none !important;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+
+
+/* =====================================================
+   TECHORBIT BADGE
+   ===================================================== */
+
+.assignment-section {
+
+    flex: 0 0 100px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* Round Badge */
+
+.techorbit-badge {
+
+    width: 150px;
+
+    height: 95px;
+
+    border-radius: 50%;
+
+    background: #102a56;
+
+    border: 3px solid #102a56;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 0 0 2px #ffffff,
+        0 0 0 3px #102a56;
+
+}
+
+
+.badge-inner {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #ffffff;
+
+    text-align: center;
+
+}
+
+
+.badge-inner strong {
+
+    font-size: 7px;
+
+    letter-spacing: .8px;
+
+}
+
+
+.badge-inner span {
+
+    font-size: 6.5px;
+
+    letter-spacing: .7px;
+
+    margin-top: 2px;
+
+}
+
+
+.badge-inner b {
+
+    font-size: 8px;
+
+    margin-top: 2px;
+
+}
+
+
+
+/* Assignment text below badge */
+
+.assignment-title {
+
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .8px;
+
+    color: #123b72;
+
+    white-space: nowrap;
+
+}
+
+
+.assignment-subtitle {
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color: #777;
+
+    font-style: italic;
+
+    white-space: nowrap;
+
+}
+
+
+
+/* =====================================================
+   TAGLINE
+   ===================================================== */
+
+.certificate-tagline {
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 8px;
+    margin-top: 14px;
 
-    color: #8992a0;
+    padding-top: 7px;
 
-    letter-spacing: 0.5px;
+    border-top: 1px solid #e4e4e4;
+
+    font-size: 7px;
+
+    color: #999;
+
+    letter-spacing: .5px;
+
 }
 
 
-/* =================================
+
+/* =====================================================
+   PRINT BUTTON
+   ===================================================== */
+
+.print-area {
+
+    display: none;
+
+    text-align: center;
+
+    margin: 15px auto 30px;
+
+}
+
+
+.print-btn {
+
+    border: none;
+
+    background: #102a56;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+.print-btn:hover {
+
+    background: #0b3d91;
+
+}
+
+
+
+/* =====================================================
    PRINT
-================================= */
-
-@page {
-
-    size: A4 landscape;
-
-    margin: 0;
-}
+   ===================================================== */
 
 @media print {
 
-    body {
 
-        background: white;
+    @page {
+
+        size: A4 landscape;
+
+        margin: 0;
+
     }
 
-    .certificate {
+
+    html,
+    body {
+
+        width: 297mm;
+
+        height: 210mm;
+
+        margin: 0;
+
+        padding: 0;
+
+        background: #ffffff;
+
+
+    }
+
+
+    .generator-page,
+    .print-area {
+
+        display: none !important;
+
+    }
+
+
+    .certificate-page {
+
+        display: block !important;
 
         width: 297mm;
 
@@ -608,185 +1008,128 @@ body {
 
         margin: 0;
 
-        border: 2px solid #172238;
+        padding: 8mm;
 
-        box-shadow: none;
+        background: #ffffff;
 
-        page-break-after: avoid;
+    }
+
+
+    .certificate-border {
+
+        width: 100%;
+
+        height: 194mm;
+
+        min-height: 194mm;
+
+        padding: 7mm 10mm 5mm;
+
+        border: 1.2px solid #1b3558;
+
     }
 
 }
 
 
-/* =================================
-   MOBILE PREVIEW
-================================= */
 
-@media (max-width: 900px) {
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
-    .certificate {
+@media screen and (max-width: 900px) {
 
-        width: 96%;
 
-        min-height: auto;
+    .generator-page {
 
-        padding: 35px 25px;
-    }
+        width: 95%;
 
-    .certificate-bottom {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .details-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .detail-box:nth-child(3n) {
-
-        border-right: 1px solid #dce1e7;
-    }
-
-    .detail-box:nth-child(n+4) {
-
-        border-bottom: 1px solid #dce1e7;
-    }
-
-    .certificate-title h1 {
-
-        font-size: 30px;
-    }
-
-    .presented h2 {
-
-        font-size: 34px;
-    }
-
-}
-/* ==============================
-   CERTIFICATE GENERATOR FORM
-================================ */
-
-.generator-box {
-    width: 90%;
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.generator-box h1 {
-    text-align: center;
-    margin-bottom: 5px;
-    color: #102f5f;
-}
-
-.generator-box > p {
-    text-align: center;
-    color: #777;
-    margin-bottom: 25px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin-bottom: 18px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 7px;
-    color: #26364e;
-}
-
-.form-group input,
-.form-group select {
-    padding: 12px;
-    border: 1px solid #d5dce5;
-    border-radius: 8px;
-    font-size: 14px;
-    outline: none;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #159db8;
-}
-
-.generate-btn {
-    display: block;
-    margin: 25px auto 0;
-    padding: 13px 32px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #092f63, #13aabd);
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.generate-btn:hover {
-    transform: translateY(-2px);
-}
-
-.print-area {
-    text-align: center;
-    margin: 25px auto 50px;
-}
-
-.print-area button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: #172238;
-    color: white;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-@media (max-width: 650px) {
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .generator-box {
-        width: 94%;
         padding: 20px;
+
     }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .certificate-page {
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        margin: 20px 0;
+
+    }
+
+
+    .certificate-border {
+
+        min-width: 1000px;
+
+    }
+
 }
-
-
-/* PRINT: FORM & BUTTON HIDE */
-
 @media print {
 
-    .generator-box,
+    @page {
+        size: A4 landscape;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Badge color for PDF / Print */
+    .techorbit-badge {
+        background: #102a56 !important;
+        border-color: #102a56 !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .badge-inner {
+        color: #ffffff !important;
+        border-color: #ffffff !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .generator-page,
     .print-area {
         display: none !important;
     }
 
-    .certificate {
-        margin: 0 !important;
+    .certificate-page {
+        display: block !important;
+        width: 297mm;
+        height: 210mm;
+        min-height: 210mm;
+        margin: 0;
+        padding: 8mm;
+        background: #ffffff;
     }
-}
-.msme-logo {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: none !important;
-    max-height: none !important;
-    object-fit: contain;
-    display: block;
+
+    .certificate-border {
+        width: 100%;
+        height: 194mm;
+        min-height: 194mm;
+        padding: 7mm 10mm 5mm;
+        border: 1.2px solid #1b3558;
+    }
 }
